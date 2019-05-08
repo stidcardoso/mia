@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.teda.miaanticonceptivos">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.TutorialActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.StartActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.TermsActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.PrioritiesActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.SelectPrioritiesActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.DiscreetActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.SelectDiscreetActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.LigaduraActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.VasectomiaActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.TimeActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.SelectTimeActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.KnowActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.CobreActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.HormonasActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.ImplanteActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.InyectablesActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.OralesActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.ParcheActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.AnilloActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.EmergencyActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.PreventActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.CompareActivity"
+            android:screenOrientation="landscape" />
+
+
+    </application>
+
+</manifest>

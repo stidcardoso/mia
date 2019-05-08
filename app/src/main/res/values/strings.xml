@@ -1,0 +1,214 @@
+<resources>
+    <string name="app_name">MIA Anticonceptivos</string>
+    <string name="mia">mia</string>
+    <string name="splash_slogan">mayor información anticonceptiva</string>
+    <string name="close">Cerrar</string>
+    <string name="select_your_method">Elige tu método</string>
+    <string name="close_ask"></string>
+    <string name="discreet_title">
+        ¿QUÉ TAN DISCRETO NECESITAS
+        \nQUE SEA TU MÉTODO ANTICONCEPTIVO?
+    </string>
+    <string name="time_title">
+        ¿QUÉ TAN PENDIENTE QUIERES
+        \nESTAR DE TU ANTICONCEPTIVO?
+    </string>
+
+    <string name="ligadura">
+        Usualmente la ligadura de trompas se realiza abdominalmente por técnicas quirúrgicas diferentes: Laparoscopia o mini-laparotomía.
+ \nLa Mini-laparotomía y la Laparoscopia son procedimientos de esterilización que implican una incisión. Debido a que estos métodos son quirúrgicos, es necesario usar anestesia. Los tiempos de recuperación varían desde 1-2 días hasta algunas semanas.
+    </string>
+
+    <string name="ligadura_alarma">
+        • Un riesgo muy excepcional es que tus trompas se vuelvan a conectar por sí solas, lo que podría resultar en un embarazo
+\n• Presentar sangrado o infección posterior al procedimiento, en cualquiera de las situaciones anteriores consulta a tu médico.
+    </string>
+
+    <string name="vasectomia">
+        La vasectomía es un procedimiento quirúrgico ambulatorio y sencillo, se realiza con anestesia local, luego el médico realiza una o dos incisiones en el escroto y bloquea los conductos de modo que el esperma se mantenga fuera del líquido seminal. Sin esperma, no hay embarazo.
+    </string>
+
+    <string name="vasectomia_alarma">
+        • Un riesgo muy excepcional es que los conductos se vuelvan a conectar por sí solos, lo que podría resultar en un embarazo
+\n• Presentar sangrado o infección posterior al procedimiento, en cualquiera de las situaciones anteriores consulta a tu médico.
+    </string>
+
+    <string name="cobre_secundarios">
+        • Cólicos menstruales manejables con analgésicos anti-inflamatorios
+\n• Manchado genital escaso, ocasional y pasajero
+\n• Leve aumento del sangrado y cólicos durante la menstruación
+\n• Aumento en la duración de la menstruación
+    </string>
+
+    <string name="cobre_alarma">
+        • Hemorragia vaginal
+\n• Cólico menstrual intenso que no mejore con analgésicos
+\n• Expulsión del Dispositivo o sospecha de desplazamiento
+\n• Retraso menstrual
+    </string>
+
+    <string name="hormonas_recomendacion">
+        El momento de iniciar un DIU es entre el primer y cuarto día menstrual, pos parto, pos aborto, pos IVE (Interrupción Voluntaria del Embarazo), o habiendo descartado razonablemente un embarazo.
+\nSi deseas quedar embarazada, puedes hacer que lo retiren en cualquier momento.
+    </string>
+
+    <string name="hormonas_secundarios">
+        • Cólicos menstruales manejables con analgésicos anti-inflamatorios
+\n• Manchado genital escaso, ocasional y pasajero
+    </string>
+
+    <string name="hormonas_alarma">
+        • Hemorragia vaginal
+\n• Expulsión del Dispositivo
+    </string>
+
+    <string name="implante_desc">
+        Son barras plásticas muy delgadas de unos 4 centímetros de largo, las cuales liberan hormonas que no permiten la ovulación y además hace que se forme un tapón de moco en el cuello del útero para impedir el paso de espermatozoides.
+\nPor lo general la menstruación no se presenta o se vuelve infrecuente y escasa. Protege de 3 a 5 años según el implante elegido.
+    </string>
+
+    <string name="implante_procedure">
+        Es una o dos barras que se inserta debajo de la piel en la cara interna superior del brazo, se inserta en pocos minutos.
+\nNo requiere de controles médicos.
+\nAl retirar se recupera la fertilidad inmediatamente.
+    </string>
+
+    <string name="implante_secundarios">
+        • Usualmente la menstruación se vuelve infrecuente y escasa.
+\n• En algunas mujeres puede aumentar la cantidad de sangrado durante los primeros meses y luego disminuye
+\n• Estos cambios no afectan la salud ni la fertilidad
+    </string>
+
+    <string name="implante_alarma">
+         Aumento o disminución excesiva de peso.
+\n• Hemorragia durante la menstruación (Empapar una toalla higiénica por hora ó más)
+\n• Depresión
+\n• Dolor súbito de cabeza acompañado de visión borrosa
+\nEn cualquiera de las situaciones anteriores consulta a tu médico.
+    </string>
+
+    <string name="inyectables_desc">
+        La inyección contiene hormonas que evitan la maduración y liberación de óvulos por el ovario. Además espesa el moco cervical, formando una barrera (tapón) que bloquea el paso de los espermatozoides hacia el óvulo.
+        \n
+\nExisten dos tipos de inyectables: Mensuales y Trimestrales
+Cómo su nombre indica, define el tiempo en el que debe ser aplicado el anticonceptivo
+    </string>
+
+    <string name="inyectables_recomendaciones">
+        Es indispensable para una adecuada protección anticonceptiva, disciplina en su uso. En caso de olvidar una toma puede ser ingerida en un plazo de 24 horas.
+\nPara el uso de la minipíldora el olvido no puede ser mayor a 12 horas.
+\nPrecaución con fumadoras mayores a 35 años.
+    </string>
+
+    <string name="inyectables_secundarios">
+    • Manchado inesperado escaso durante los primeros meses.
+\n• Menos acné y mejoría de la piel
+\n• Menos sangrado y cólicos durante la menstruación
+    </string>
+
+    <string name="inyectables_alerta">
+• Hemorragia durante la menstruación (Empapar una toalla higiénica por hora o más)
+\n• Depresión
+\n• Dolor súbito de cabeza acompañado de visión borrosa
+\n• Dolor en alguna parte del cuerpo con enrojecimiento y sensación de calor
+    </string>
+
+    <string name="orales_desc">
+Son píldoras que funcionan liberando hormonas las cuales evitan que tus ovarios produzcan óvulos. Además, vuelven más espeso el moco cervical, bloqueando el avance de los espermatozoides impidiéndoles llegar a tus óvulos.
+\nExisten dos clases: Píldora y Minipíldora
+        \n
+        \nEn el uso de la píldora hay un descanso entre 4 a 7 días (Periodo en el que puede presentarse menstruación). La minipíldora no tiene descanso.
+
+    </string>
+
+    <string name="orales_recomendaciones">
+Es indispensable para una adecuada protección anticonceptiva, disciplina en su uso. En caso de olvidar una toma puede ser ingerida en un plazo de 24 horas.
+\nPara el uso de la minipíldora el olvido no puede ser mayor a 12 horas.
+\nPrecaución con fumadoras mayores a 35 años.
+    </string>
+
+    <string name="orales_secundarios">
+         • Manchado inesperado escaso durante los primeros meses.
+\n• Menos acné y mejoría de la piel
+\n• Menos sangrado y cólicos durante la menstruación
+    </string>
+
+    <string name="orales_alarma">
+• Hemorragia durante la menstruación (Empapar una toalla higiénica por hora ó más)
+\n• Depresión
+\n• Dolor súbito de cabeza acompañado de visión borrosa
+\n• Dolor en alguna parte del cuerpo con enrojecimiento y sensación de calor
+\nEn cualquiera de las situaciones anteriores consulta a tu médico.
+    </string>
+
+    <string name="parche_desc">
+        Es una tira de plástico color beige, finita, que parece un curita cuadrada. Mide menos unos 5 cm de lado, y viene en un solo y único color (beige) la cual Funcionan liberando hormonas que evitan que tus ovarios produzcan óvulos.
+        \n
+        \nAdemás, vuelven más espeso el moco cervical, impidiendo que los espermatozoides lleguen al ovario
+    </string>
+
+    <string name="parche_recomendaciones">
+        Es indispensable para una adecuada protección anticonceptiva, disciplina en su uso.
+\nImportante seguir las indicaciones de uso.
+\nPesar menos de 89 kilos
+\nOjo las fumadoras mayores de 35
+\nVerificar que la piel no esté engrasada para garantizar adecuada adherencia a la piel
+    </string>
+
+    <string name="parche_procedure">
+        Puedes ponerlo en el glúteo, la panza, la parte superior externa del brazo o en la parte superior del torso, pero nunca en los pechos. Simplemente pega un parche nuevo una vez por semana durante tres semanas seguidas, y descansas una semana, no olvides retirar el anterior. Si no deseas menstruación simplemente continua con el siguiente parche.
+    </string>
+
+    <string name="parche_secundarios">
+        • Dolor o sensibilidad en los pechos
+\n• Náuseas y vómitos
+\n• Irritación en el lugar donde se coloca el parche
+\n• Cambios en tu deseo sexual
+\n• Menos acné y mejoría de la piel
+\n• Mayor flujo vaginal, irritación o infección
+    </string>
+
+    <string name="parche_alarma">
+        • Hemorragia durante la menstruación (Empapar una toalla higiénica por hora ó más)
+\n• Depresión
+\n• Dolor súbito de cabeza acompañado de visión borrosa
+\n• Dolor en alguna parte del cuerpo con enrojecimiento y sensación de calor
+\nEn cualquiera de las situaciones anteriores consulta a tu médico.
+    </string>
+
+    <string name="anillo_desc">
+    Es un pequeño anillo flexible que pones dentro de la vagina. Te lo dejas puesto en su lugar por tres semanas seguidas, y te lo quitas en la cuarta semana.
+ \n
+\nFunciona liberando hormonas que evitan que tus ovarios produzcan óvulos,  Además, vuelven más espeso el moco cervical, impidiendo que los espermatozoides lleguen al ovario.
+    </string>
+
+    <string name="anillo_recomendaciones">
+        Es indispensable para una adecuada protección anticonceptiva, disciplina en su uso.
+\nImportante seguir las indicaciones de uso.
+\nPesar menos de 89 kilos
+\nOjo las fumadoras mayores de 35
+\nSi vas a guardar el anillo por más de 4 meses, tienes que ponerlo en el refrigerador. Así que si no quieres que nadie sepa que lo estás usando, esto podría ser un problema. Además, algunas parejas dicen que sienten el anillo al tener sexo. Si eso es un problema, puedes sacarte el anillo durante el sexo solo asegúrate de volvértelo a poner en menos de 3 horas, y solo haz esto una vez cada 24 horas.
+    </string>
+
+    <string name="anillo_procedure">
+        Antes que nada, lávate las manos. Para meterlo, apriétalo entre los dedos índice y pulgar y póntelo igual que un tampón. Se ubicará contra la pared vaginal. La posición exacta no importa, mientras te sientas cómoda. Ni siquiera tienes que quitártelo mientras tienes sexo. (Pero si quieres quitártelo durante el sexo, todo bien, solo asegúrate de volver a meterlo dentro de las tres horas, y haz esto únicamente una vez cada 24 horas.)  (Para quitar el anillo, engancha tu dedo en el borde inferior y jálalo. Tan simple como eso.)
+    </string>
+
+    <string name="anillo_secundarios">
+        • Dolor o sensibilidad en los pechos
+\n• Náuseas y vómitos
+\n• Irritación en el lugar donde se coloca el parche
+\n• Cambios en tu deseo sexual
+\n• Menos acné y mejoría de la piel
+\n• Mayor flujo vaginal, irritación o infección
+    </string>
+
+    <string name="anillo_alarma">
+• Hemorragia durante la menstruación (Empapar una toalla higiénica por hora ó más)
+\n• Depresión
+\n• Dolor súbito de cabeza acompañado de visión borrosa
+\n• Dolor en alguna parte del cuerpo con enrojecimiento y sensación de calor
+\nEn cualquiera de las situaciones anteriores consulta a tu médico.
+    </string>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="s100">150sp</dimen>
+    <dimen name="s90">120sp</dimen>
+    <dimen name="s80">110sp</dimen>
+    <dimen name="s75">100sp</dimen>
+    <dimen name="s65">85sp</dimen>
+    <dimen name="s60">75sp</dimen>
+    <dimen name="s50">65sp</dimen>
+    <dimen name="s45">57sp</dimen>
+    <dimen name="s30">45sp</dimen>
+    <dimen name="s22">33sp</dimen>
+    <dimen name="s14">21sp</dimen>
+
+    <dimen name="d75">100dp</dimen>
+    <dimen name="d50">70dp</dimen>
+    <dimen name="d250">350dp</dimen>
+
+</resources>
