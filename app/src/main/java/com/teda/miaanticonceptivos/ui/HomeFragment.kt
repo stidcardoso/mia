@@ -10,11 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.firebase.database.FirebaseDatabase
 import com.teda.miaanticonceptivos.R
-import com.teda.miaanticonceptivos.util.Storage
-import com.teda.miaanticonceptivos.util.Utilities
-import com.teda.miaanticonceptivos.ui.fragment.*
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.data.model.TimeAnalytics
+import com.teda.miaanticonceptivos.ui.fragment.*
+import com.teda.miaanticonceptivos.util.Storage
+import com.teda.miaanticonceptivos.util.Utilities
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -72,8 +72,10 @@ class HomeFragment : Fragment() {
         result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
-                Math.abs(m1!!.duration - Storage.selectedTime) > Math.abs(m2!!.duration - Storage.selectedTime) -> 1
-                Math.abs(m1!!.duration - Storage.selectedTime) == Math.abs(m2!!.duration - Storage.selectedTime) -> 0
+                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
+                - Storage.selectedTime) -> 1
+                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
+                - Storage.selectedTime) -> 0
                 else -> -1
             }
 
@@ -97,24 +99,24 @@ class HomeFragment : Fragment() {
 
     fun showResult(result: ArrayList<Method>) {
         text1.text = result.first().name
-        imageRes1.setImageDrawable(ContextCompat.getDrawable(context!!, result.first().icon))
+        imageRes1.setImageDrawable(ContextCompat.getDrawable(context!!, result.first().icon ?: 0))
         text2.text = result[1].name
-        imageRes2.setImageDrawable(ContextCompat.getDrawable(context!!, result[1].icon))
+        imageRes2.setImageDrawable(ContextCompat.getDrawable(context!!, result[1].icon ?: 0))
 
         imageRes1.setOnClickListener {
-            changeFragment(result.first().id)
+            changeFragment(result.first().id ?: 0)
         }
 
         imageRes2.setOnClickListener {
-            changeFragment(result[1].id)
+            changeFragment(result[1].id ?: 0)
         }
 
         if (result.size > 2) {
             text3.text = result[2].name
-            imageRes3.setImageDrawable(ContextCompat.getDrawable(context!!, result[2].icon))
+            imageRes3.setImageDrawable(ContextCompat.getDrawable(context!!, result[2].icon ?: 0))
             imageRes3.setOnClickListener {
                 if (result.size > 2)
-                    changeFragment(result[2].id)
+                    changeFragment(result[2].id ?: 0)
             }
         }
     }
