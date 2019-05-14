@@ -1,14 +1,19 @@
 <resources>
+
     <string name="app_name">MIA Anticonceptivos</string>
     <string name="mia">mia</string>
-    <string name="splash_slogan">mayor información anticonceptiva</string>
+    <string name="splash_slogan">mayor
+        \ninformación
+        \nanticonceptiva</string>
+
     <string name="close">Cerrar</string>
     <string name="select_your_method">Elige tu método</string>
-    <string name="close_ask"></string>
+
     <string name="discreet_title">
         ¿QUÉ TAN DISCRETO NECESITAS
         \nQUE SEA TU MÉTODO ANTICONCEPTIVO?
     </string>
+
     <string name="time_title">
         ¿QUÉ TAN PENDIENTE QUIERES
         \nESTAR DE TU ANTICONCEPTIVO?

@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.teda.miaanticonceptivos.R
-import com.teda.miaanticonceptivos.ui.fragment.*
+import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainCallback {

@@ -1,5 +1,7 @@
 package com.teda.miaanticonceptivos.util
 
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 object Utilities {
@@ -16,5 +18,10 @@ object Utilities {
         val seconds = TimeUnit.NANOSECONDS.toSeconds(endTime)
         return seconds.toInt()
     }
+
+    /*fun getCurrentDate(): String? {
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+        return sdf.format(Date())
+    }*/
 
 }

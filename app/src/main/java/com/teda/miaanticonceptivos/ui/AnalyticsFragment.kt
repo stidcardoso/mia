@@ -19,13 +19,12 @@ class AnalyticsFragment : Fragment() {
     var times = ArrayList<TimeAnalytics?>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.activity_analytics, container, false)
-        return v
+        return inflater.inflate(R.layout.activity_analytics, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var firebase = FirebaseDatabase.getInstance().getReference("time")
+        val firebase = FirebaseDatabase.getInstance().getReference("time")
         firebase.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
 

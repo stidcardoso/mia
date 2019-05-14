@@ -12,7 +12,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.data.model.TimeAnalytics
-import com.teda.miaanticonceptivos.ui.fragment.*
+import com.teda.miaanticonceptivos.ui.form.view.TutorialActivity
+import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import com.teda.miaanticonceptivos.util.Storage
 import com.teda.miaanticonceptivos.util.Utilities
 import kotlinx.android.synthetic.main.activity_home.*

@@ -7,4 +7,6 @@
     <color name="yellow">#F9C83F</color>
     <color name="orange">#FF6633</color>
     <color name="black">#000000</color>
+
+    <color name="textPrimary">#101010</color>
 </resources>

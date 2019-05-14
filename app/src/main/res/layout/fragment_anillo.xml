@@ -10,7 +10,6 @@
         android:layout_height="match_parent"
         android:background="#AE1022">
 
-
         <View
             android:id="@+id/view8"
             android:layout_width="match_parent"
