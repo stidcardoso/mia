@@ -32,7 +32,7 @@ class RealmDao() {
     }
 
     fun getMethodByName(name: String):Method {
-        return realm.where(Method::class.java).contains(FbConstants.NAME, name).findFirst() ?: Method()
+        return realm.where(Method::class.java).equalTo(FbConstants.NAME, name).findFirst() ?: Method()
     }
 
     fun getSync(): Sync {

@@ -9,7 +9,7 @@ class BaseMethodPresenter(var v: BaseMethodContract.View?) : BaseMethodContract.
         realmDao?.closeRealm()
     }
 
-    private var realmDao: RealmDao? = null
+    private var realmDao: RealmDao? = RealmDao()
 
     override fun getMethod(name: String) {
         realmDao?.getMethodByName(name)?.let { v?.showMethod(it) }

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,8 @@ import com.teda.miaanticonceptivos.ui.MainActivity
 import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
+import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
+import kotlinx.android.synthetic.main.component_side_bar.*
 import kotlinx.android.synthetic.main.fragment_ligadura.*
 import kotlinx.android.synthetic.main.fragment_tip.*
 
@@ -38,6 +41,7 @@ class LigaduraFragment : Fragment(), BaseMethodContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.getMethod(FbConstants.LIGADURA)
+
         drawer.setOnClickListener {
             mainCallback.openDrawer()
         }
@@ -63,6 +67,25 @@ class LigaduraFragment : Fragment(), BaseMethodContract.View {
     }
 
     override fun showMethod(method: Method) {
+        val details = method.details
+        val featuresAdapter = BasicAdapter(ArrayList(details?.features))
+        recyclerFeatures.layoutManager = LinearLayoutManager(context)
+        recyclerFeatures.adapter = featuresAdapter
+
+        textProcedure.text = details?.procedure
+
+        if (details?.sideEffects?.isEmpty() == true) {
+            textEmptySideEffects.visibility = View.VISIBLE
+        } else {
+            textEmptySideEffects.visibility = View.GONE
+            val sideEffectsAdapter = BasicAdapter(ArrayList(details?.sideEffects))
+            recyclerSideEffects.layoutManager = LinearLayoutManager(context)
+            recyclerSideEffects.adapter = sideEffectsAdapter
+        }
+
+        val alarmAdapter = BasicAdapter(ArrayList(details?.alarm))
+        recyclerAlarm.layoutManager = LinearLayoutManager(context)
+        recyclerAlarm.adapter = alarmAdapter
 
     }
 

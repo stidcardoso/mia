@@ -2,6 +2,8 @@
 
     <string name="app_name">MIA Anticonceptivos</string>
     <string name="mia">mia</string>
+    <string name="empty_side_effects">No hay descritos</string>
+
     <string name="splash_slogan">mayor
         \ninformación
         \nanticonceptiva</string>
