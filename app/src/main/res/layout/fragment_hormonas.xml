@@ -4,83 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="120dp"
-        android:layout_height="match_parent"
-        android:background="#AE1022">
-
-
-        <View
-            android:id="@+id/view8"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/orange"
-            app:layout_constraintDimensionRatio="H, 1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ImageView
-            android:id="@+id/drawer"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:tint="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/view8"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:srcCompat="@drawable/ic_menu" />
-
-        <ImageView
-            android:id="@+id/imageBack"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/back"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:layout_constraintTop_toBottomOf="@+id/view8" />
-
-
-        <ImageView
-            android:id="@+id/imageLight"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/light"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:layout_constraintTop_toBottomOf="@+id/imageBack" />
-
-
-        <ImageView
-            android:id="@+id/imageCompare"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="24dp"
-            app:srcCompat="@drawable/ic_money_24dp"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:layout_constraintTop_toBottomOf="@+id/imageLight" />
-
-
-    </android.support.constraint.ConstraintLayout>
-
+    <include
+        android:id="@+id/sideBar"
+        layout="@layout/component_side_bar" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toEndOf="@+id/sideBar"
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
@@ -107,7 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="#FFE8CF"
-                app:layout_constraintBottom_toBottomOf="@id/guideline"
+                app:layout_constraintBottom_toBottomOf="@id/textDesc"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -147,16 +79,15 @@
                 app:layout_constraintTop_toBottomOf="@id/textTitle" />
 
             <TextView
+                style="@style/textParagraph"
                 android:id="@+id/textDesc"
                 android:layout_width="0dp"
+                android:paddingBottom="8dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/monserrat_light"
                 android:text="El Dispositivo es una pieza pequeña de plástico en forma de T de unos 3,5 centímetros, que se coloca dentro del útero para evitar embarazos, liberando una pequeña cantidad de hormona, que espesa el moco cervical para evitar el paso de los espermatozoides al útero. Los DIUs con hormonas ofrecen de 3 a 5 años de protección. "
-                android:textColor="#000000"
-                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/textTitle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textPercent" />
@@ -201,14 +132,14 @@
                 android:id="@+id/textHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:fontFamily="@font/monserrat_bold"
                 android:text="CARACTERÍSTICAS"
                 android:textColor="@color/black"
                 android:textSize="50sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/guideline" />
+                app:layout_constraintTop_toBottomOf="@id/textDesc" />
 
             <View
                 android:id="@+id/view"
@@ -221,266 +152,136 @@
                 app:layout_constraintStart_toStartOf="@id/textHeader"
                 app:layout_constraintTop_toBottomOf="@id/textHeader" />
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerFeatures"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
-                android:layout_marginTop="80dp"
                 android:src="@drawable/alert_condon"
+                app:layout_constraintBottom_toTopOf="@+id/textTitleRecommendations"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textHeader" />
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintVertical_bias="1.0" />
 
-            <android.support.constraint.ConstraintLayout
+            <TextView
+                android:id="@+id/textTitleRecommendations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/monserrat_bold"
+                android:text="RECOMENDACIONES"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/recyclerFeatures" />
+
+            <View
+                android:id="@+id/viewRecommendations"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/textTitleRecommendations" />
+
+            <TextView
+                android:id="@+id/textProcedureTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monserrat_medium"
+                android:text="PROCEDIMIENTO"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/viewRecommendations" />
+
+            <TextView
+                android:id="@+id/textProcedure"
+                style="@style/textParagraph"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="@font/monserrat_light"
+                android:paddingTop="16dp"
+                android:text="@string/ligadura"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textHeader"
-                app:layout_constraintTop_toBottomOf="@+id/view">
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/textProcedureTitle" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:id="@+id/textSideEffectsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monserrat_medium"
+                android:paddingTop="16dp"
+                android:text="POSIBLES EFECTOS SECUNDARIOS"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/textProcedure" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
+            <TextView
+                android:id="@+id/textEmptySideEffects"
+                style="@style/textParagraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monserrat_light"
+                android:paddingTop="16dp"
+                android:text="@string/empty_side_effects"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/textSideEffectsTitle" />
 
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerSideEffects"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/textSideEffectsTitle" />
 
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="Ideal para quien no desea estar pendiente de un anticonceptivo" />
+            <TextView
+                android:id="@+id/textAlarmTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monserrat_medium"
+                android:paddingTop="16dp"
+                android:text="SITUACIONES DE ALARMA"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/recyclerSideEffects" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
-
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="Sin dependencia de preocuparse de cómo y dónde adquirirlo" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
-
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="Se puede usar durante la lactancia" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
-
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="Total privacidad, invisible y sencillo" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
-
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="Confiable y seguro, 99% de efectividad" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
-
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="¡Gran ahorro! Única inversión" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp">
-
-                        <ImageView
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/circle_red" />
-
-                        <TextView
-                            style="@style/ItemDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="Totalmente reversible" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/monserrat_bold"
-                        android:text="RECOMENDACIONES"
-                        android:textColor="@color/black"
-                        android:textSize="50sp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginEnd="32dp"
-                        android:layout_marginRight="32dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/orange"
-                        app:layout_constraintEnd_toEndOf="parent" />
-
-                    <TextView
-                        style="@style/textParagraph"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_light"
-                        android:paddingTop="16dp"
-                        android:text="@string/hormonas_recomendacion"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/monserrat_medium"
-                        android:text="PROCEDIMIENTO"
-                        android:textColor="#000000"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        style="@style/textParagraph"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_light"
-                        android:paddingTop="16dp"
-                        android:text="El procedimiento se realiza en un consultorio y consiste realizar un examen ginecólogo para realizar inserción vaginal pasando por el orificio del cuello del útero para dejar el DIU dentro del útero, es ambulatorio y toma solo unos minutos."
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        style="@style/textParagraph"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_medium"
-                        android:paddingTop="16dp"
-                        android:text="POSIBLES EFECTOS SECUNDARIOS"
-                        android:textColor="#000000"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_light"
-                        android:paddingTop="16dp"
-                        android:text="@string/hormonas_secundarios"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        style="@style/textParagraph"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_medium"
-                        android:paddingTop="16dp"
-                        android:text="SITUACIONES DE ALARMA"
-                        android:textColor="#000000"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_light"
-                        android:paddingBottom="16dp"
-                        android:paddingTop="16dp"
-                        android:text="@string/hormonas_alarma"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </android.support.constraint.ConstraintLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerAlarm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:paddingBottom="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintTop_toBottomOf="@id/textAlarmTitle" />
 
 
         </android.support.constraint.ConstraintLayout>
