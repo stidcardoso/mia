@@ -4,6 +4,12 @@
     <string name="mia">mia</string>
     <string name="empty_side_effects">No hay descritos</string>
 
+    <string name="qr_text">
+        Lee este código con la cámara
+        \nde tu celular para adquirir
+        \neste método anticonceptivo
+    </string>
+
     <string name="splash_slogan">mayor
         \ninformación
         \nanticonceptiva</string>

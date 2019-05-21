@@ -8,5 +8,6 @@ open class Params : RealmObject() {
     @PrimaryKey
     var id = 1
     var terms: String = ""
+    var feature: String = ""
     var webUrl: String = ""
 }

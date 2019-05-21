@@ -24,8 +24,7 @@ class HomeFragment : Fragment() {
     lateinit var mainCallback: MainCallback
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.activity_home, container, false)
-        return v
+        return inflater.inflate(R.layout.activity_home, container, false)
     }
 
     override fun onAttach(context: Context?) {
@@ -52,9 +51,9 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun getResults() {
+    private fun getResults() {
         var methods = Storage.methods.toList()
-        var filteredMethods: List<Method>
+//        var filteredMethods: List<Method>
         val result = arrayListOf<Method>()
         if (Storage.sonSelected)
             methods = methods.filter {
@@ -98,7 +97,7 @@ class HomeFragment : Fragment() {
 //        textView9.text = result.first().name + result[1].name
     }
 
-    fun showResult(result: ArrayList<Method>) {
+    private fun showResult(result: ArrayList<Method>) {
         text1.text = result.first().name
         imageRes1.setImageDrawable(ContextCompat.getDrawable(context!!, result.first().icon ?: 0))
         text2.text = result[1].name
@@ -122,8 +121,8 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun changeFragment(id: Int) {
-        var fragment = when (id) {
+    private fun changeFragment(id: Int) {
+        val fragment: Fragment = when (id) {
             0 -> LigaduraFragment()
             1 -> VasectomiaFragment()
             2 -> CobreFragment()

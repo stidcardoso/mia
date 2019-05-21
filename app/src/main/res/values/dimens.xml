@@ -16,4 +16,6 @@
     <dimen name="d50">50dp</dimen>
     <dimen name="d250">250dp</dimen>
 
+    <dimen name="qr_space">84dp</dimen>
+
 </resources>

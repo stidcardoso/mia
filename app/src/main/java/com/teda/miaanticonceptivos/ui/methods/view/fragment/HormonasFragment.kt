@@ -9,12 +9,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.teda.miaanticonceptivos.ui.CompareActivity
-import com.teda.miaanticonceptivos.ui.MainActivity
-import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
+import com.teda.miaanticonceptivos.ui.CompareActivity
+import com.teda.miaanticonceptivos.ui.MainActivity
+import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
@@ -44,7 +44,7 @@ class HormonasFragment : Fragment(), BaseMethodContract.View {
         drawer.setOnClickListener {
             mainCallback.openDrawer()
         }
-        imageBack.setOnClickListener{
+        imageBack.setOnClickListener {
             (activity as MainActivity).onBackPressed()
         }
 
@@ -55,10 +55,10 @@ class HormonasFragment : Fragment(), BaseMethodContract.View {
             imageIcon.setImageDrawable(ContextCompat.getDrawable(context!!, R.drawable.hormonas_res))
         }
 
-        tipInclude.setOnClickListener{
+        tipInclude.setOnClickListener {
             tip.visibility = View.GONE
         }
-        imageCompare.setOnClickListener{
+        imageCompare.setOnClickListener {
             startActivity(Intent(context, CompareActivity::class.java))
         }
     }
