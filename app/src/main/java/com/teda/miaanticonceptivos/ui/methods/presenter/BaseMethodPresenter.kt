@@ -15,4 +15,8 @@ class BaseMethodPresenter(var v: BaseMethodContract.View?) : BaseMethodContract.
         realmDao?.getMethodByName(name)?.let { v?.showMethod(it) }
     }
 
+    override fun getParams() {
+        realmDao?.getParams()?.let { v?.showParams(it) }
+    }
+
 }

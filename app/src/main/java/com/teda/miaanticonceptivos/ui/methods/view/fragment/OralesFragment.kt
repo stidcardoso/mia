@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
+import com.teda.miaanticonceptivos.data.model.Params
 import com.teda.miaanticonceptivos.ui.CompareActivity
 import com.teda.miaanticonceptivos.ui.MainActivity
 import com.teda.miaanticonceptivos.ui.MainCallback
@@ -71,7 +72,10 @@ class OralesFragment : Fragment(), BaseMethodContract.View {
         val alarmAdapter = BasicAdapter(ArrayList(details?.alarm))
         recyclerAlarm.layoutManager = LinearLayoutManager(context)
         recyclerAlarm.adapter = alarmAdapter
+    }
 
+    override fun showParams(params: Params) {
+        textFeatures.text = params.feature
     }
 
     override fun onDestroy() {

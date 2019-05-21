@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
+import com.teda.miaanticonceptivos.data.model.Params
 import com.teda.miaanticonceptivos.ui.CompareActivity
 import com.teda.miaanticonceptivos.ui.MainActivity
 import com.teda.miaanticonceptivos.ui.MainCallback
@@ -32,8 +33,7 @@ class AnilloFragment : Fragment(), BaseMethodContract.View {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.fragment_anillo, container, false)
-        return v
+        return inflater.inflate(R.layout.fragment_anillo, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,6 +71,10 @@ class AnilloFragment : Fragment(), BaseMethodContract.View {
         recyclerAlarm.layoutManager = LinearLayoutManager(context)
         recyclerAlarm.adapter = alarmAdapter
 
+    }
+
+    override fun showParams(params: Params) {
+        textFeatures.text = params.feature
     }
 
     override fun onDestroy() {

@@ -15,6 +15,7 @@ import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
+import com.teda.miaanticonceptivos.data.model.Params
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
@@ -84,7 +85,10 @@ class CobreFragment : Fragment(), BaseMethodContract.View {
         val alarmAdapter = BasicAdapter(ArrayList(details?.alarm))
         recyclerAlarm.layoutManager = LinearLayoutManager(context)
         recyclerAlarm.adapter = alarmAdapter
+    }
 
+    override fun showParams(params: Params) {
+        textFeatures.text = params.feature
     }
 
     override fun onDestroy() {

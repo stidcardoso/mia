@@ -133,7 +133,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textPercent" />
 
             <TextView
-                android:id="@+id/textHeader"
+                android:id="@+id/textFeatures"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -153,8 +153,8 @@
                 android:layout_marginRight="32dp"
                 android:background="@color/orange"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
-                app:layout_constraintTop_toBottomOf="@id/textHeader" />
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
+                app:layout_constraintTop_toBottomOf="@id/textFeatures" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerFeatures"
@@ -164,7 +164,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/view" />
 
             <ImageView
@@ -188,7 +188,7 @@
                 android:text="RECOMENDACIONES"
                 android:textColor="@color/black"
                 android:textSize="50sp"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/recyclerFeatures" />
 
             <View
@@ -200,7 +200,7 @@
                 android:layout_marginRight="32dp"
                 android:background="@color/orange"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/textTitleRecommendations" />
 
             <TextView
@@ -211,7 +211,7 @@
                 android:text="PROCEDIMIENTO"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/viewRecommendations" />
 
             <TextView
@@ -226,7 +226,7 @@
                 android:text="@string/ligadura"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/textProcedureTitle" />
 
             <TextView
@@ -238,7 +238,7 @@
                 android:text="POSIBLES EFECTOS SECUNDARIOS"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/textProcedure" />
 
             <TextView
@@ -251,7 +251,7 @@
                 android:text="@string/empty_side_effects"
                 android:textColor="@color/black"
                 android:visibility="gone"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/textSideEffectsTitle" />
 
             <android.support.v7.widget.RecyclerView
@@ -261,7 +261,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/textSideEffectsTitle" />
 
             <TextView
@@ -273,7 +273,7 @@
                 android:text="SITUACIONES DE ALARMA"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/recyclerSideEffects" />
 
             <android.support.v7.widget.RecyclerView
@@ -284,7 +284,7 @@
                 android:layout_marginRight="32dp"
                 android:paddingBottom="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textHeader"
+                app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/textAlarmTitle" />
 
             <fragment
