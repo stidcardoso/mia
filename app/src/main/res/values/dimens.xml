@@ -18,4 +18,8 @@
 
     <dimen name="qr_space">84dp</dimen>
 
+
+    <dimen name="pricing_method_bg_size">100dp</dimen>
+    <dimen name="pricing_method_image_size">80dp</dimen>
+
 </resources>
