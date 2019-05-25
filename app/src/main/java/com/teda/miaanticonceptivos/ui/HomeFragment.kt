@@ -72,10 +72,10 @@ class HomeFragment : Fragment() {
         result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
-                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
-                - Storage.selectedTime) -> 1
-                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
-                - Storage.selectedTime) -> 0
+                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
+                -Storage.selectedTime) -> 1
+                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
+                -Storage.selectedTime) -> 0
                 else -> -1
             }
 
@@ -123,15 +123,15 @@ class HomeFragment : Fragment() {
 
     private fun changeFragment(id: Int) {
         val fragment: Fragment = when (id) {
-            0 -> LigaduraFragment()
-            1 -> VasectomiaFragment()
-            2 -> CobreFragment()
-            3 -> HormonasFragment()
-            4 -> ImplanteFragment()
-            5 -> InyectablesFragment()
-            6 -> OralesFragment()
-            7 -> ParcheFragment()
-            8 -> AnilloFragment()
+            1 -> LigaduraFragment()
+            2 -> VasectomiaFragment()
+            3 -> CobreFragment()
+            4 -> HormonasFragment()
+            5 -> ImplanteFragment()
+            6 -> InyectablesFragment()
+            7 -> OralesFragment()
+            8 -> ParcheFragment()
+            9 -> AnilloFragment()
             else -> LigaduraFragment()
         }
         mainCallback.goDetail(fragment)

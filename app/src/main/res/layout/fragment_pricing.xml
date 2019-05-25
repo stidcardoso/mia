@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tutorial_background">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/monserrat_bold"
+        android:text="@string/title_pricing"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageBackgroundMethod1"
+        android:layout_width="@dimen/pricing_method_bg_size"
+        android:layout_height="@dimen/pricing_method_bg_size"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/circle_lpurple_shadow"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+    <ImageView
+        android:id="@+id/imageRes1"
+        android:layout_width="@dimen/pricing_method_image_size"
+        android:layout_height="@dimen/pricing_method_image_size"
+        android:padding="20dp"
+        android:src="@drawable/vasectomia_res"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBackgroundMethod1"
+        app:layout_constraintEnd_toEndOf="@+id/imageBackgroundMethod1"
+        app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod1"
+        app:layout_constraintTop_toTopOf="@+id/imageBackgroundMethod1" />
+
+    <TextView
+        android:id="@+id/textMethod1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/monserrat_regular"
+        android:text="TEXT"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageBackgroundMethod1"
+        app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod1"
+        app:layout_constraintTop_toBottomOf="@+id/imageBackgroundMethod1" />
+
+    <ImageView
+        android:id="@+id/imageBackgroundMethod2"
+        android:layout_width="@dimen/pricing_method_bg_size"
+        android:layout_height="@dimen/pricing_method_bg_size"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/circle_lpurple_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+    <ImageView
+        android:id="@+id/imageRes2"
+        android:layout_width="@dimen/pricing_method_image_size"
+        android:layout_height="@dimen/pricing_method_image_size"
+        android:padding="20dp"
+        android:src="@drawable/vasectomia_res"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBackgroundMethod2"
+        app:layout_constraintEnd_toEndOf="@+id/imageBackgroundMethod2"
+        app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod2"
+        app:layout_constraintTop_toTopOf="@+id/imageBackgroundMethod2" />
+
+    <TextView
+        android:id="@+id/textMethod2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/monserrat_regular"
+        android:text="TEXT"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageBackgroundMethod2"
+        app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod2"
+        app:layout_constraintTop_toBottomOf="@+id/imageBackgroundMethod2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monserrat_bold"
+        android:text="Valor unitario"
+        android:textColor="@color/yellow"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/textPrice1"
+        app:layout_constraintEnd_toEndOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textPrice1" />
+
+    <TextView
+        android:id="@+id/textPrice1"
+        style="@style/textBigPricePricing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="PRECIO 1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/textMethod1" />
+
+    <TextView
+        android:id="@+id/textPrice2"
+        style="@style/textBigPricePricing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="PRECIO 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/textMethod1" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerPricing"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnClose"
+        app:layout_constraintTop_toBottomOf="@id/textPrice1"
+        tools:listitem="@layout/item_pricing" />
+
+    <include
+        android:id="@+id/btnClose"
+        layout="@layout/button_close"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/monserrat_regular"
+        android:text="@string/close"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnClose"
+        app:layout_constraintEnd_toStartOf="@+id/btnClose"
+        app:layout_constraintTop_toTopOf="@+id/btnClose" />
+
+    <TextView
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/monserrat_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp"
+        android:text="@string/ask_payment_methods"
+        app:layout_constraintBottom_toBottomOf="@id/btnClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnClose" />
+
+</android.support.constraint.ConstraintLayout>

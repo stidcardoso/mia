@@ -16,15 +16,15 @@ object Storage {
     )
 
     var methods = arrayListOf(
-            Method(0, "Ligadura", 1000, 2, R.drawable.ligadura_res),
-            Method(1, "Vasectomia", 1000, 2, R.drawable.vasectomia_res),
-            Method(2, "T de cobre", 36, 2, R.drawable.cobre_res),
-            Method(3, "T de hormonas", 36, 2, R.drawable.hormonas_res),
-            Method(4, "Implante", 36, 1, R.drawable.implante),
-            Method(5, "Inyectables", 1, 1, R.drawable.inyectables_res),
-            Method(6, "Orales", 0, 1, R.drawable.orales_res),
-            Method(7, "Parche", 1, 1, R.drawable.parche_res),
-            Method(8, "Anillo", 1, 1, R.drawable.anillo_res)
+            Method(1, "Ligadura", 1000, 2, R.drawable.ligadura_res),
+            Method(2, "Vasectomia", 1000, 2, R.drawable.vasectomia_res),
+            Method(3, "T de cobre", 36, 2, R.drawable.cobre_res),
+            Method(4, "T de hormonas", 36, 2, R.drawable.hormonas_res),
+            Method(5, "Implante", 36, 1, R.drawable.implante),
+            Method(6, "Inyectables", 1, 1, R.drawable.inyectables_res),
+            Method(7, "Orales", 0, 1, R.drawable.orales_res),
+            Method(8, "Parche", 1, 1, R.drawable.parche_res),
+            Method(9, "Anillo", 1, 1, R.drawable.anillo_res)
     )
 
     var selectedPriorities = arrayListOf<Priority?>()

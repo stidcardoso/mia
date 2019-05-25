@@ -3,6 +3,8 @@
     <string name="app_name">MIA Anticonceptivos</string>
     <string name="mia">mia</string>
     <string name="empty_side_effects">No hay descritos</string>
+    <string name="title_pricing">¿CUÁNTO TE VA A COSTAR?</string>
+    <string name="ask_payment_methods">Pregunta por nuestras formas de pago</string>
 
     <string name="qr_text">
         Lee este código con la cámara
