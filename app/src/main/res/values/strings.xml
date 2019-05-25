@@ -17,6 +17,11 @@
     <string name="close">Cerrar</string>
     <string name="select_your_method">Elige tu método</string>
 
+    <!--terminos y condiciones-->
+    <string name="terms_and_conditions">Aceptas usar esta APP y el dispositivo o interface que lo sustenta para tu uso personal y únicamente para el propósito aquí descrito. Te comprometes a no “hackear” esta aplicación, ni este dispositivo, ni hacer ingeniería inversa o realizar cualquier acto que pudiera tener el efecto de dañar su funcionamiento, violar su seguridad o interferir con su uso por parte de otros usuarios.</string>
+
+    <!--metodos-->
+
     <string name="discreet_title">
         ¿QUÉ TAN DISCRETO NECESITAS
         \nQUE SEA TU MÉTODO ANTICONCEPTIVO?

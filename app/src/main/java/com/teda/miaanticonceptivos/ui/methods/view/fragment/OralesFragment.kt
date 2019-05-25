@@ -54,7 +54,7 @@ class OralesFragment : Fragment(), BaseMethodContract.View {
 
     override fun showMethod(method: Method) {
         val details = method.details
-        val featuresAdapter = BasicAdapter(ArrayList(details?.features))
+        val featuresAdapter = BasicAdapter(ArrayList(details?.features), false)
         recyclerFeatures.layoutManager = LinearLayoutManager(context)
         recyclerFeatures.adapter = featuresAdapter
 

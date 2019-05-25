@@ -107,13 +107,41 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:fadeScrollbars="false"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                app:layout_constraintBottom_toTopOf="@id/viewLine"
+                app:layout_constraintTop_toBottomOf="@id/textView12">
+
+                <TextView
+                    android:id="@+id/textTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/monserrat_regular"
+                    android:textColor="@color/black"
+                    android:paddingBottom="16dp"
+                    android:textSize="22sp"
+                    android:text="@string/terms_and_conditions" />
+
+
+            </ScrollView>
+
+<!--
             <LinearLayout
                 android:id="@+id/constraint1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="128dp"
                 android:layout_marginRight="128dp"
                 android:layout_marginBottom="4dp"
@@ -124,7 +152,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView12"
                 app:layout_constraintVertical_bias="0.0">
 
-                <!--<TextView
+                &lt;!&ndash;<TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,28 +190,20 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/monserrat_light"
                     android:text="Aceptas usar esta APP y el dispositivo o interface que lo sustenta para tu uso personal y únicamente para el propósito aquí descrito. Te comprometes a no “hackear” esta aplicación, ni este dispositivo, ni hacer ingeniería inversa o realizar cualquier acto que pudiera tener el efecto de dañar su funcionamiento, violar su seguridad o interferir con su uso por parte de otros usuarios."
-                    android:textColor="@color/black" />-->
-
-                <TextView
-                    android:id="@+id/textTerms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/monserrat_light"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    tools:text="Aceptas usar esta APP y el dispositivo o interface que lo sustenta para tu uso personal y únicamente para el propósito aquí descrito. Te comprometes a no “hackear” esta aplicación, ni este dispositivo, ni hacer ingeniería inversa o realizar cualquier acto que pudiera tener el efecto de dañar su funcionamiento, violar su seguridad o interferir con su uso por parte de otros usuarios." />
+                    android:textColor="@color/black" />&ndash;&gt;
 
 
             </LinearLayout>
+-->
 
             <View
+                android:id="@+id/viewLine"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
                 android:background="@color/orange"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                 app:layout_constraintEnd_toStartOf="@+id/imageView4"
@@ -195,13 +215,12 @@
                 android:id="@+id/imageView4"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginEnd="128dp"
-                android:layout_marginRight="128dp"
                 android:layout_marginBottom="24dp"
                 android:src="@drawable/circle_accept"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/constraint1" />
+                app:layout_constraintEnd_toEndOf="@id/scrollView"
+                app:layout_constraintStart_toEndOf="@id/scrollView"
+                />
 
         </android.support.constraint.ConstraintLayout>
 

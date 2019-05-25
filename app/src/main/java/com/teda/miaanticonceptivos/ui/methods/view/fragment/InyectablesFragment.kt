@@ -64,7 +64,7 @@ class InyectablesFragment : Fragment(), BaseMethodContract.View {
             textEmptySideEffects.visibility = View.VISIBLE
         } else {
             textEmptySideEffects.visibility = View.GONE
-            val sideEffectsAdapter = BasicAdapter(ArrayList(details?.sideEffects))
+            val sideEffectsAdapter = BasicAdapter(ArrayList(details?.sideEffects), false)
             recyclerSideEffects.layoutManager = LinearLayoutManager(context)
             recyclerSideEffects.adapter = sideEffectsAdapter
         }
