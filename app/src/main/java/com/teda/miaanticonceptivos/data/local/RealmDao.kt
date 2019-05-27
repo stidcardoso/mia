@@ -2,11 +2,12 @@ package com.teda.miaanticonceptivos.data.local
 
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
+import com.teda.miaanticonceptivos.data.model.MethodResult
 import com.teda.miaanticonceptivos.data.model.Params
 import com.teda.miaanticonceptivos.data.model.Sync
 import io.realm.Realm
 
-class RealmDao() {
+class RealmDao {
 
     val realm = Realm.getDefaultInstance()!!
 
@@ -31,8 +32,9 @@ class RealmDao() {
         }
     }
 
-    fun getMethodByName(name: String):Method {
-        return realm.where(Method::class.java).equalTo(FbConstants.NAME, name).findFirst() ?: Method()
+    fun getMethodByName(name: String): Method {
+        return realm.where(Method::class.java).equalTo(FbConstants.NAME, name).findFirst()
+                ?: Method()
     }
 
     fun getSync(): Sync {
@@ -44,6 +46,22 @@ class RealmDao() {
             realm.where(Sync::class.java).findAll().deleteAllFromRealm()
             realm.insertOrUpdate(sync)
         }
+    }
+
+    fun insertMethodResults(methodResults: List<MethodResult>) {
+        realm.executeTransaction {
+            realm.where(MethodResult::class.java).findAll().deleteAllFromRealm()
+            realm.insertOrUpdate(methodResults)
+        }
+    }
+
+    fun getMethodsFromResult(): List<Method> {
+        val methodResults = realm.where(MethodResult::class.java).findAll()
+        val query = realm.where(Method::class.java)
+        for (m in methodResults) {
+            query.equalTo(FbConstants.ID, m.id)
+        }
+        return query.findAll()
     }
 
 }

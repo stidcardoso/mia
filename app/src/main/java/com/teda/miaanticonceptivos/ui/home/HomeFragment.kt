@@ -1,4 +1,4 @@
-package com.teda.miaanticonceptivos.ui
+package com.teda.miaanticonceptivos.ui.home
 
 import android.content.Context
 import android.content.Intent
@@ -11,17 +11,23 @@ import android.view.ViewGroup
 import com.google.firebase.database.FirebaseDatabase
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.model.Method
+import com.teda.miaanticonceptivos.data.model.MethodResult
 import com.teda.miaanticonceptivos.data.model.TimeAnalytics
+import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.form.view.TutorialActivity
+import com.teda.miaanticonceptivos.ui.home.presenter.HomeContract
+import com.teda.miaanticonceptivos.ui.home.presenter.HomePresenter
 import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import com.teda.miaanticonceptivos.util.Storage
 import com.teda.miaanticonceptivos.util.Utilities
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
+import kotlin.collections.ArrayList
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeContract.View {
 
     lateinit var mainCallback: MainCallback
+    private val presenter = HomePresenter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_home, container, false)
@@ -72,10 +78,10 @@ class HomeFragment : Fragment() {
         result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
-                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
-                -Storage.selectedTime) -> 1
-                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
-                -Storage.selectedTime) -> 0
+                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
+                - Storage.selectedTime) -> 1
+                Math.abs(m1.duration ?: 0 - Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
+                - Storage.selectedTime) -> 0
                 else -> -1
             }
 
@@ -91,9 +97,11 @@ class HomeFragment : Fragment() {
              } else
                  result.add(method)
          }*/
+        val methodResults = ArrayList<MethodResult>()
+        for (method in methods)
+            methodResults.add(MethodResult(method.id ?: 1))
+        presenter.saveMethodResults(methodResults)
         showResult(ArrayList(methods))
-
-
 //        textView9.text = result.first().name + result[1].name
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tutorial_background">
+    android:background="@drawable/tutorial_background_blue">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline1"
@@ -123,7 +123,7 @@
         android:fontFamily="@font/monserrat_bold"
         android:text="Valor unitario"
         android:textColor="@color/yellow"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@id/textPrice1"
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintStart_toStartOf="parent"
