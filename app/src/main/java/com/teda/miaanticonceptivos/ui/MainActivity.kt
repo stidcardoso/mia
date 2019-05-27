@@ -137,5 +137,4 @@ class MainActivity : AppCompatActivity(), MainCallback {
             replaceFragment(HomeFragment())
     }
 
-
 }

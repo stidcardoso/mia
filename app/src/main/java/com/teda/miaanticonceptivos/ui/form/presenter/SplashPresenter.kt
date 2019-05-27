@@ -9,6 +9,7 @@ import com.teda.miaanticonceptivos.data.local.RealmDao
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.data.model.Params
 import com.teda.miaanticonceptivos.data.model.Sync
+import com.teda.miaanticonceptivos.util.Storage
 import java.util.*
 
 class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
@@ -55,12 +56,26 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                         val method = qMethod.toObject(Method::class.java)
                         method?.details = gson.fromJson(method?.detailsJson, Method::class.java).details
                         method?.details?.id = UUID.randomUUID().toString()
+                        val position = (method?.id ?: 1) - 1
+                        method?.icon = Storage.methods[position].icon
                         method?.let { methods.add(it) }
                     }
                     realmDao.insertMethods(methods)
                     onEndService()
                     val sync = Sync(Date())
                     realmDao.insertSync(sync)
+                }
+                .addOnFailureListener {
+                    Log.d("FirebaseError", it.message)
+                    onEndService()
+                }
+
+        firebase.collection(FbConstants.PREVENTION)
+                .get()
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+
+                    }
                 }
                 .addOnFailureListener {
                     Log.d("FirebaseError", it.message)

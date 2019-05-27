@@ -76,6 +76,10 @@
             android:name=".ui.CompareActivity"
             android:screenOrientation="landscape" />
 
+        <activity
+            android:name=".ui.pricing.view.PricingActivity"
+            android:screenOrientation="landscape" />
+
 
     </application>
 
