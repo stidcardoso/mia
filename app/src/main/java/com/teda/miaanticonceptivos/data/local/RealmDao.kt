@@ -1,10 +1,7 @@
 package com.teda.miaanticonceptivos.data.local
 
 import com.teda.miaanticonceptivos.data.FbConstants
-import com.teda.miaanticonceptivos.data.model.Method
-import com.teda.miaanticonceptivos.data.model.MethodResult
-import com.teda.miaanticonceptivos.data.model.Params
-import com.teda.miaanticonceptivos.data.model.Sync
+import com.teda.miaanticonceptivos.data.model.*
 import io.realm.Realm
 
 class RealmDao {
@@ -62,6 +59,17 @@ class RealmDao {
             query.equalTo(FbConstants.ID, m.id)
         }
         return query.findAll()
+    }
+
+    fun insertPreventions(preventions: ArrayList<Prevention>) {
+        realm.executeTransaction {
+            realm.where(Prevention::class.java).findAll().deleteAllFromRealm()
+            realm.insertOrUpdate(preventions)
+        }
+    }
+
+    fun getPreventions() : ArrayList<Prevention> {
+        return ArrayList(realm.where(Prevention::class.java).findAll())
     }
 
 }

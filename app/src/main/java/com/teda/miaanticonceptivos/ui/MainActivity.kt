@@ -8,6 +8,7 @@ import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.ui.home.CompareFragment
 import com.teda.miaanticonceptivos.ui.home.EmergencyFragment
 import com.teda.miaanticonceptivos.ui.home.HomeFragment
+import com.teda.miaanticonceptivos.ui.home.view.PreventFragment
 import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
