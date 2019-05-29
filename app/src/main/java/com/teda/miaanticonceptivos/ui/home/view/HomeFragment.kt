@@ -1,4 +1,4 @@
-package com.teda.miaanticonceptivos.ui.home
+package com.teda.miaanticonceptivos.ui.home.view
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.google.firebase.database.FirebaseDatabase
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.model.Method
@@ -78,10 +79,10 @@ class HomeFragment : Fragment(), HomeContract.View {
         result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
-                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
-                - Storage.selectedTime) -> 1
-                Math.abs(m1.duration ?: 0 - Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
-                - Storage.selectedTime) -> 0
+                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
+                -Storage.selectedTime) -> 1
+                Math.abs(m1.duration ?: 0-Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
+                -Storage.selectedTime) -> 0
                 else -> -1
             }
 
@@ -143,6 +144,18 @@ class HomeFragment : Fragment(), HomeContract.View {
             else -> LigaduraFragment()
         }
         mainCallback.goDetail(fragment)
+    }
+
+    override fun showImage(url: String) {
+        Glide.with(this)
+                .load(url)
+                .error(ContextCompat.getDrawable(context!!, R.drawable.home_background))
+                .into(imageBackground)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDetach()
     }
 
 }

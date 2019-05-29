@@ -5,6 +5,7 @@ object FbConstants {
     const val PARAMS = "params"
     const val METHOD = "method"
     const val PREVENTION = "prevention"
+    const val IMAGE = "image"
 
     const val NAME = "name"
     const val ID = "id"

@@ -16,4 +16,8 @@ class HomePresenter(var v: HomeContract.View?) : HomeContract.Presenter {
         realmDao.insertMethodResults(methodResults)
     }
 
+    override fun getImage() {
+        v?.showImage(realmDao.getImage().main)
+    }
+
 }

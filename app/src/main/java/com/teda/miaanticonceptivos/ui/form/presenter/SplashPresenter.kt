@@ -6,10 +6,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.local.RealmDao
-import com.teda.miaanticonceptivos.data.model.Method
-import com.teda.miaanticonceptivos.data.model.Params
-import com.teda.miaanticonceptivos.data.model.Prevention
-import com.teda.miaanticonceptivos.data.model.Sync
+import com.teda.miaanticonceptivos.data.model.*
 import com.teda.miaanticonceptivos.util.Storage
 import java.util.*
 import kotlin.collections.ArrayList
@@ -24,7 +21,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
     private val realmDao = RealmDao()
     private var firebase = FirebaseFirestore.getInstance()
     private val gson = Gson()
-    private val MAX_SERVICES = 3
+    private val MAX_SERVICES = 4
     private var countResults = 0
 
     override fun getFirebaseData() {
@@ -42,6 +39,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                             val params = result.result?.documents?.first()?.toObject(Params::class.java)
                             Log.d("PARAMS", params?.terms)
                             params?.let { realmDao.insertParams(it) }
+
                         }
                     }
                     onEndService()
@@ -83,6 +81,21 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                         }
                     }
                     realmDao.insertPreventions(preventions)
+                    onEndService()
+                }
+                .addOnFailureListener {
+                    Log.d("FirebaseError", it.message)
+                    onEndService()
+                }
+
+        firebase.collection(FbConstants.IMAGE)
+                .get()
+                .addOnCompleteListener { result ->
+                    if (result.isSuccessful) {
+                        val image = result.result?.documents?.first()?.toObject(Image::class.java)
+                        Log.d("Image", image.toString())
+                        image?.let { realmDao.insertImage(it) }
+                    }
                     onEndService()
                 }
                 .addOnFailureListener {

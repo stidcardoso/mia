@@ -7,11 +7,15 @@ interface HomeContract {
 
     interface View {
 
+        fun showImage(url: String)
+
     }
 
     interface Presenter: BasePresenter<View> {
 
         fun saveMethodResults(methodResults: ArrayList<MethodResult>)
+
+        fun getImage()
 
     }
 

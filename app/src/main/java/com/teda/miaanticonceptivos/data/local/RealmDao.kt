@@ -68,8 +68,19 @@ class RealmDao {
         }
     }
 
-    fun getPreventions() : ArrayList<Prevention> {
+    fun getPreventions(): ArrayList<Prevention> {
         return ArrayList(realm.where(Prevention::class.java).findAll())
+    }
+
+    fun insertImage(image: Image) {
+        realm.executeTransaction {
+            realm.where(Image::class.java).findAll().deleteAllFromRealm()
+            realm.insertOrUpdate(image)
+        }
+    }
+
+    fun getImage(): Image {
+        return realm.where(Image::class.java).findFirst() ?: Image()
     }
 
 }
