@@ -8,13 +8,13 @@
         android:id="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="match_parent"
         android:background="#AE1022">
 
         <View
             android:id="@+id/view8"
-            app:layout_constraintDimensionRatio="H, 1:1"
+            app:layout_constraintDimensionRatio="H, 1:1.5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,54 +25,54 @@
 
         <ImageView
             android:id="@+id/drawer"
+            android:layout_width="@dimen/icon_drawer_size"
+            android:layout_height="@dimen/icon_drawer_size"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="16dp"
+            android:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/view8"
             app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:srcCompat="@drawable/ic_menu"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:tint="@color/white" />
+            app:srcCompat="@drawable/ic_menu" />
 
         <ImageView
             android:id="@+id/imageBack"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:layout_constraintTop_toBottomOf="@+id/view8"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:padding="4dp"
+            android:layout_width="@dimen/icon_drawer_size"
+            android:layout_height="@dimen/icon_drawer_size"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:padding="4dp"
             android:src="@drawable/back"
-            android:visibility="visible" />
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/view8"
+            app:layout_constraintTop_toBottomOf="@+id/view8" />
 
 
         <ImageView
             android:id="@+id/imageLight"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:layout_constraintTop_toBottomOf="@+id/imageBack"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="@dimen/icon_drawer_size"
+            android:layout_height="@dimen/icon_drawer_size"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
             android:src="@drawable/light"
-            android:visibility="visible" />
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/view8"
+            app:layout_constraintTop_toBottomOf="@+id/imageBack" />
 
 
         <ImageView
             android:id="@+id/imageCompare"
+            android:layout_width="@dimen/icon_drawer_size"
+            android:layout_height="@dimen/icon_drawer_size"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@+id/view8"
             app:layout_constraintTop_toBottomOf="@+id/imageLight"
-            app:srcCompat="@drawable/ic_money_24dp"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:visibility="visible" />
+            app:srcCompat="@drawable/ic_money_24dp" />
 
 
     </android.support.constraint.ConstraintLayout>

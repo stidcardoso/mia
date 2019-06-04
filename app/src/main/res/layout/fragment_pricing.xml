@@ -151,13 +151,22 @@
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@id/textMethod1" />
 
+    <include
+        android:id="@+id/divider"
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textPrice1" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerPricing"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@id/btnClose"
-        app:layout_constraintTop_toBottomOf="@id/textPrice1"
+        app:layout_constraintTop_toBottomOf="@id/divider"
         tools:listitem="@layout/item_pricing" />
 
     <include
