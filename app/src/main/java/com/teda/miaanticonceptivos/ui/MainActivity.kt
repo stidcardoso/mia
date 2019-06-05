@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.ui.home.CompareFragment
 import com.teda.miaanticonceptivos.ui.home.EmergencyFragment
-import com.teda.miaanticonceptivos.ui.home.HomeFragment
+import com.teda.miaanticonceptivos.ui.home.view.HomeFragment
 import com.teda.miaanticonceptivos.ui.home.view.PreventFragment
 import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -116,6 +117,7 @@ class MainActivity : AppCompatActivity(), MainCallback {
     }
 
     private fun replaceFragment(fragment: Fragment) {
+        App.eventUtil.setCurrentScreen(this, fragment)
         currentFragment = fragment
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.container, fragment)
