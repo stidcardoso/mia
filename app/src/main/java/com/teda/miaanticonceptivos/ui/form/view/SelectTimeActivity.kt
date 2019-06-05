@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.ImageView
+import android.widget.SeekBar
 import android.widget.TextView
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.ui.KnowActivity
@@ -14,9 +16,9 @@ import kotlinx.android.synthetic.main.activity_select_time.*
 
 class SelectTimeActivity : AppCompatActivity() {
 
-    private val constraints by lazy { arrayListOf<ConstraintLayout>(constraint1, constraint2, constraint3, constraint4, constraint5, constraint6, constraint7) }
-    private val textViews by lazy { arrayListOf<TextView>(textView1, textView2, textView3, textView4, textView5, textView6, textView7) }
-    private val images by lazy { arrayListOf<ImageView>(image1, image2, image3, image4, image5, image6, image7) }
+    private val constraints by lazy { arrayListOf<ConstraintLayout>(constraint1, constraint2, constraint3, constraint5, constraint6, constraint7) }
+    private val textViews by lazy { arrayListOf<TextView>(textView1, textView2, textView3, textView5, textView6, textView7) }
+    private val images by lazy { arrayListOf<ImageView>(image1, image2, image3, image5, image6, image7) }
     private var selected = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,30 +44,34 @@ class SelectTimeActivity : AppCompatActivity() {
             selected(2)
         }
 
-        constraint4.setOnClickListener {
-            selected(3)
-        }
+        /*   constraint4.setOnClickListener {
+               selected(3)
+           }*/
 
         constraint5.setOnClickListener {
             Storage.selectedTime = 36
-            selected(4)
+            selected(3)
         }
 
         constraint6.setOnClickListener {
             Storage.selectedTime = 60
-            selected(5)
+            selected(4)
         }
 
         constraint7.setOnClickListener {
             Storage.selectedTime = 1000
-            selected(6)
+            selected(5)
         }
-
+        seekProgress.setOnTouchListener { _, _ ->
+            return@setOnTouchListener true
+        }
     }
 
     private fun selected(position: Int) {
+        val progress = ((1000.0 / 6) * (position + 1) - (1000.0/12))
+        seekProgress.progress = progress.toInt()
         selected = true
-        for (i in 0..6) {
+        for (i in 0..5) {
             if (i == position) {
                 constraints[i].background = ContextCompat.getDrawable(this, R.drawable.orange_card)
                 textViews[i].setTextColor(ContextCompat.getColor(this, R.color.white))

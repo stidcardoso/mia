@@ -21,5 +21,6 @@
 
     <dimen name="pricing_method_bg_size">100dp</dimen>
     <dimen name="pricing_method_image_size">80dp</dimen>
+    <dimen name="icon_drawer_size">40dp</dimen>
 
 </resources>
