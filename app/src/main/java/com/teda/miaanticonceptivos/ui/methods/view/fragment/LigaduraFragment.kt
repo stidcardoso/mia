@@ -19,6 +19,7 @@ import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
+import com.teda.miaanticonceptivos.ui.pricing.view.PricingActivity
 import kotlinx.android.synthetic.main.component_side_bar.*
 import kotlinx.android.synthetic.main.fragment_ligadura.*
 import kotlinx.android.synthetic.main.fragment_tip.*
@@ -63,7 +64,7 @@ class LigaduraFragment : Fragment(), BaseMethodContract.View {
         }
 
         imageCompare.setOnClickListener {
-            startActivity(Intent(context, CompareActivity::class.java))
+            startActivity(Intent(context, PricingActivity::class.java))
         }
     }
 

@@ -73,20 +73,23 @@ class HomeFragment : Fragment(), HomeContract.View {
         }
         if (methods.size <= 2) {
             showResult(ArrayList(methods))
+            saveResults(ArrayList(methods))
             return
         }
 //        methods.shuffled()
         result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
-                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
-                -Storage.selectedTime) -> 1
-                Math.abs(m1.duration ?: 0-Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
-                -Storage.selectedTime) -> 0
+                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
+                - Storage.selectedTime) -> 1
+                Math.abs(m1.duration ?: 0 - Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
+                - Storage.selectedTime) -> 0
                 else -> -1
             }
 
         })
+        saveResults(ArrayList(methods))
+        showResult(ArrayList(methods))
         /* for (method in methods) {
              val near = Math.abs(method.duration - Storage.selectedTime)
              if (result.isNotEmpty()) {
@@ -98,12 +101,19 @@ class HomeFragment : Fragment(), HomeContract.View {
              } else
                  result.add(method)
          }*/
-        val methodResults = ArrayList<MethodResult>()
-        for (method in methods)
-            methodResults.add(MethodResult(method.id ?: 1))
-        presenter.saveMethodResults(methodResults)
-        showResult(ArrayList(methods))
+
 //        textView9.text = result.first().name + result[1].name
+    }
+
+    private fun saveResults(mMethods: ArrayList<Method>) {
+        var i = 0
+        val methodResults = ArrayList<MethodResult>()
+        for (method in mMethods) {
+            i += 1
+            if (i > 3) break
+            methodResults.add(MethodResult(method.id ?: 1))
+        }
+        presenter.saveMethodResults(methodResults)
     }
 
     private fun showResult(result: ArrayList<Method>) {

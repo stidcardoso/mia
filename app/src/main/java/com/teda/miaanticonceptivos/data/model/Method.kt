@@ -11,6 +11,7 @@ open class Method() : RealmObject() {
     var discreet: Int? = null
     var icon: Int? = null
     var detailsJson: String? = null
+    var price: String? = null
     var month: String? = null
     var threeMonths: String? = null
     var year: String? = null
@@ -25,5 +26,16 @@ open class Method() : RealmObject() {
         this.duration = duration
         this.discreet = discreet
         this.icon = icon
+    }
+
+    fun getPrices(): ArrayList<String?> {
+        val prices = ArrayList<String?>()
+        prices.add(month)
+        prices.add(threeMonths)
+        prices.add(year)
+        prices.add(threeYears)
+        prices.add(fiveYears)
+        prices.add(tenYears)
+        return prices
     }
 }

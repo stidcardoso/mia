@@ -34,7 +34,7 @@
         app:layout_constraintWidth_percent="0.333" />
 
     <TextView
-        android:id="@+id/textTitle"
+        android:id="@+id/textPrice2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/monserrat_regular"

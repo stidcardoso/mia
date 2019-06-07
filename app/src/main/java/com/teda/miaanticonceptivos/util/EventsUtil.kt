@@ -22,7 +22,7 @@ class EventsUtil(private var firebaseAnalytics: FirebaseAnalytics) {
     fun setMethodResult() {
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, START_QUESTIONS)
-        bundle.putString()
+//        bundle.putString()
         firebaseAnalytics.logEvent(METHOD_RESULT, bundle)
     }
 

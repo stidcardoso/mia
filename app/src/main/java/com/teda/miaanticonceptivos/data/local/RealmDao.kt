@@ -54,11 +54,12 @@ class RealmDao {
 
     fun getMethodsFromResult(): List<Method> {
         val methodResults = realm.where(MethodResult::class.java).findAll()
-        val query = realm.where(Method::class.java)
+        val ids = ArrayList<Int>()
         for (m in methodResults) {
-            query.equalTo(FbConstants.ID, m.id)
+            ids.add(m.id ?: 0)
         }
-        return query.findAll()
+        return realm.where(Method::class.java).`in`(FbConstants.ID, ids.toTypedArray()).findAll()
+//        return query.findAll()
     }
 
     fun insertPreventions(preventions: ArrayList<Prevention>) {
