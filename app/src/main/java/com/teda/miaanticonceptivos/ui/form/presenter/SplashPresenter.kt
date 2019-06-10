@@ -1,15 +1,22 @@
 package com.teda.miaanticonceptivos.ui.form.presenter
 
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
+import android.os.Environment
 import android.text.format.DateUtils
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
+import com.squareup.picasso.Target
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.local.RealmDao
 import com.teda.miaanticonceptivos.data.model.*
 import com.teda.miaanticonceptivos.util.Storage
+import java.io.File
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.concurrent.thread
 
 class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
 
@@ -95,6 +102,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                         val image = result.result?.documents?.first()?.toObject(Image::class.java)
                         Log.d("Image", image.toString())
                         image?.let { realmDao.insertImage(it) }
+                        saveImages(image?.getURLs() ?: arrayListOf())
                     }
                     onEndService()
                 }
@@ -102,6 +110,33 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                     Log.d("FirebaseError", it.message)
                     onEndService()
                 }
+    }
+
+    fun getTarget() {
+        val target = object : Target {
+            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+            }
+
+            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+            }
+
+            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                thread(start = true) {
+                    val file = File(Environment.getExternalStorageDirectory().path + "/" + "+")
+
+                }
+            }
+        }
+    }
+
+    private fun saveImages(images: ArrayList<String>) {
+        for (image in images) {
+
+            Picasso.get()
+                    .load(image)
+                    .into()
+
+        }
     }
 
     private fun onEndService() {
