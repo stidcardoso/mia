@@ -232,4 +232,13 @@ Es indispensable para una adecuada protección anticonceptiva, disciplina en su 
 \nEn cualquiera de las situaciones anteriores consulta a tu médico.
     </string>
 
+    <string-array name="prices_titles">
+        <item>1 MES</item>
+        <item>3 MES</item>
+        <item>1 AÑO</item>
+        <item>3 AÑOS</item>
+        <item>5 AÑOS</item>
+        <item>10 AÑOS</item>
+    </string-array>
+
 </resources>

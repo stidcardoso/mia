@@ -4,21 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tutorial_background_blue">
+    android:background="@drawable/pricing_background">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
 
     <TextView
         android:id="@+id/textTitle"
@@ -84,8 +91,8 @@
         android:layout_marginRight="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/circle_lpurple_shadow"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/circle_purple_shadow"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@id/textTitle" />
@@ -117,6 +124,49 @@
         app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod2"
         app:layout_constraintTop_toBottomOf="@+id/imageBackgroundMethod2" />
 
+    <ImageView
+        android:id="@+id/imageBackgroundMethod3"
+        android:layout_width="@dimen/pricing_method_bg_size"
+        android:layout_height="@dimen/pricing_method_bg_size"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/circle_lpurple_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+    <ImageView
+        android:id="@+id/imageRes3"
+        android:layout_width="@dimen/pricing_method_image_size"
+        android:layout_height="@dimen/pricing_method_image_size"
+        android:padding="20dp"
+        android:src="@drawable/condon_res"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBackgroundMethod3"
+        app:layout_constraintEnd_toEndOf="@+id/imageBackgroundMethod3"
+        app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod3"
+        app:layout_constraintTop_toTopOf="@+id/imageBackgroundMethod3" />
+
+    <TextView
+        android:id="@+id/textMethod3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/monserrat_regular"
+        android:text="CONDON"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageBackgroundMethod3"
+        app:layout_constraintStart_toStartOf="@+id/imageBackgroundMethod3"
+        app:layout_constraintTop_toBottomOf="@+id/imageBackgroundMethod3" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -147,8 +197,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="PRECIO 2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/textMethod1" />
+
+    <TextView
+        android:id="@+id/textPrice3"
+        style="@style/textBigPricePricing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="---"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@id/textMethod1" />
 
     <include
@@ -164,7 +225,6 @@
         android:id="@+id/recyclerPricing"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@id/btnClose"
         app:layout_constraintTop_toBottomOf="@id/divider"
         tools:listitem="@layout/item_pricing" />
@@ -174,9 +234,9 @@
         layout="@layout/button_close"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

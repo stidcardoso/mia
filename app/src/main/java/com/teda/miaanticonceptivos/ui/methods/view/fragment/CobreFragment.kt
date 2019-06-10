@@ -16,6 +16,7 @@ import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.data.model.Params
+import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
@@ -42,11 +43,9 @@ class CobreFragment : Fragment(), BaseMethodContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.getMethod(FbConstants.T_DE_COBRE)
+        DrawerHelper(sideBar, this)
         drawer.setOnClickListener {
             mainCallback.openDrawer()
-        }
-        imageBack.setOnClickListener{
-            (activity as MainActivity).onBackPressed()
         }
 
         imageLight.setOnClickListener {
@@ -60,9 +59,6 @@ class CobreFragment : Fragment(), BaseMethodContract.View {
             tip.visibility = View.GONE
         }
 
-        imageCompare.setOnClickListener{
-            startActivity(Intent(context, CompareActivity::class.java))
-        }
     }
 
     override fun showMethod(method: Method) {

@@ -16,6 +16,7 @@ import com.teda.miaanticonceptivos.data.model.Params
 import com.teda.miaanticonceptivos.ui.CompareActivity
 import com.teda.miaanticonceptivos.ui.MainActivity
 import com.teda.miaanticonceptivos.ui.MainCallback
+import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
@@ -42,11 +43,9 @@ class HormonasFragment : Fragment(), BaseMethodContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.getMethod(FbConstants.T_DE_HORMONAS)
+        DrawerHelper(sideBar, this)
         drawer.setOnClickListener {
             mainCallback.openDrawer()
-        }
-        imageBack.setOnClickListener {
-            (activity as MainActivity).onBackPressed()
         }
 
         imageLight.setOnClickListener {
@@ -59,9 +58,7 @@ class HormonasFragment : Fragment(), BaseMethodContract.View {
         tipInclude.setOnClickListener {
             tip.visibility = View.GONE
         }
-        imageCompare.setOnClickListener {
-            startActivity(Intent(context, CompareActivity::class.java))
-        }
+
     }
 
     override fun showMethod(method: Method) {

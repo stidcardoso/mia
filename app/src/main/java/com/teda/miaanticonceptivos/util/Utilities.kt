@@ -1,12 +1,12 @@
 package com.teda.miaanticonceptivos.util
 
-import java.text.SimpleDateFormat
+import java.text.NumberFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 object Utilities {
 
-    var startTime: Long? = null
+    private var startTime: Long? = null
 
     fun startingTime() {
         startTime = System.nanoTime()
@@ -17,6 +17,16 @@ object Utilities {
         endTime = (endTime - startTime!!)
         val seconds = TimeUnit.NANOSECONDS.toSeconds(endTime)
         return seconds.toInt()
+    }
+
+    fun getCurrency(amount: String): String {
+        return try {
+            val format = NumberFormat.getInstance(Locale.US)
+            "$ " + format.format(amount.toInt())
+        } catch (e: NumberFormatException) {
+            e.message
+            ""
+        }
     }
 
     /*fun getCurrentDate(): String? {

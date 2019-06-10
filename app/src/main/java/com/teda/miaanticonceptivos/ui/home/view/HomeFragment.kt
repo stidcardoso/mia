@@ -88,8 +88,8 @@ class HomeFragment : Fragment(), HomeContract.View {
             }
 
         })
-        saveResults(ArrayList(methods))
         showResult(ArrayList(methods))
+        saveResults(ArrayList(methods))
         /* for (method in methods) {
              val near = Math.abs(method.duration - Storage.selectedTime)
              if (result.isNotEmpty()) {
@@ -111,7 +111,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         for (method in mMethods) {
             i += 1
             if (i > 3) break
-            methodResults.add(MethodResult(method.id ?: 1))
+            methodResults.add(MethodResult(method.id ?: 1, i))
         }
         presenter.saveMethodResults(methodResults)
     }

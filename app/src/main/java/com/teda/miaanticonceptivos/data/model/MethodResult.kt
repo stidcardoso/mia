@@ -7,9 +7,11 @@ open class MethodResult() : RealmObject() {
 
     @PrimaryKey
     var id: Int? = null
+    var position: Int? = null
 
-    constructor(id: Int) : this() {
+    constructor(id: Int, position: Int) : this() {
         this.id = id
+        this.position = position
     }
 
 }

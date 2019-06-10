@@ -9,6 +9,7 @@ object FbConstants {
 
     const val NAME = "name"
     const val ID = "id"
+    const val POSITION = "position"
 
     const val LIGADURA = "LIGADURA"
     const val VASECTOMIA = "VASECTOMIA"
