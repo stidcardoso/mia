@@ -22,10 +22,10 @@ class PrioritiesActivity : AppCompatActivity() {
             Utilities.startingTime()
         }
 
-        Glide.with(this)
+      /*  Glide.with(this)
                 .load(realmDao.getImage().priority)
                 .error(ContextCompat.getDrawable(this, R.drawable.priorities_background))
-                .into(imageBackground)
+                .into(imageBackground)*/
     }
 
     override fun onDestroy() {

@@ -17,7 +17,7 @@ class HomePresenter(var v: HomeContract.View?) : HomeContract.Presenter {
     }
 
     override fun getImage() {
-        v?.showImage(realmDao.getImage().main)
+//        v?.showImage(realmDao.getImage().main)
     }
 
 }

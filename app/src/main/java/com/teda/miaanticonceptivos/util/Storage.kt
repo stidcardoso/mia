@@ -27,6 +27,14 @@ object Storage {
             Method(9, "Anillo", 1, 1, R.drawable.anillo_res)
     )
 
+    var imagesNames = arrayListOf(
+            "welcome",
+            "timing",
+            "main",
+            "discreet",
+            "priority"
+    )
+
     var selectedPriorities = arrayListOf<Priority?>()
     var sonSelected = false
     var discreetSelected = -1

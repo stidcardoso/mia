@@ -19,10 +19,10 @@ class DiscreetActivity : AppCompatActivity() {
         include.setOnClickListener {
             startActivity(Intent(this, SelectDiscreetActivity::class.java))
         }
-        Glide.with(this)
+        /*Glide.with(this)
                 .load(realmDao.getImage().discreet)
                 .error(ContextCompat.getDrawable(this, R.drawable.discreet_background2))
-                .into(imageBackground)
+                .into(imageBackground)*/
     }
 
     override fun onDestroy() {

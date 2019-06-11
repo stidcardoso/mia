@@ -2,21 +2,21 @@ package com.teda.miaanticonceptivos.ui.form.presenter
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.os.Environment
 import android.text.format.DateUtils
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
+import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.local.RealmDao
 import com.teda.miaanticonceptivos.data.model.*
 import com.teda.miaanticonceptivos.util.Storage
 import java.io.File
+import java.io.FileOutputStream
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.concurrent.thread
 
 class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
 
@@ -25,11 +25,14 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
         realmDao.closeRealm()
     }
 
+    private val targets = ArrayList<Target>()
     private val realmDao = RealmDao()
     private var firebase = FirebaseFirestore.getInstance()
     private val gson = Gson()
     private val MAX_SERVICES = 4
     private var countResults = 0
+    private var imagesSaved = 0
+    private var imagesSize = 0
 
     override fun getFirebaseData() {
         val sDate = realmDao.getSync().dateUpdate?.time ?: 0
@@ -37,7 +40,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
             v?.loadNormalSplash()
             return
         }
-
+    
         firebase.collection(FbConstants.PARAMS)
                 .get()
                 .addOnCompleteListener { result ->
@@ -99,12 +102,17 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                 .get()
                 .addOnCompleteListener { result ->
                     if (result.isSuccessful) {
-                        val image = result.result?.documents?.first()?.toObject(Image::class.java)
-                        Log.d("Image", image.toString())
-                        image?.let { realmDao.insertImage(it) }
-                        saveImages(image?.getURLs() ?: arrayListOf())
+                        val images = ArrayList<Image>()
+                        for (img in result.result?.documents ?: arrayListOf()) {
+                            val image = img.toObject(Image::class.java)
+                            image?.let { images.add(it) }
+                        }
+//                        image?.let { realmDao.insertImage(it) }
+                        saveImages(images)
+                        realmDao.insertImages(images)
+                    } else {
+                        onEndService()
                     }
-                    onEndService()
                 }
                 .addOnFailureListener {
                     Log.d("FirebaseError", it.message)
@@ -112,30 +120,48 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                 }
     }
 
-    fun getTarget() {
-        val target = object : Target {
+    private fun getTarget(name: String): Target {
+        return object : Target {
             override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
             }
 
             override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                imagesSaved += 1
+                endImageService()
             }
 
             override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
-                thread(start = true) {
-                    val file = File(Environment.getExternalStorageDirectory().path + "/" + "+")
-
+                Log.d("ImageLoaded", "ImagedLoaded")
+                val file = File(App.app!!.applicationContext.filesDir, name)
+                if (file.exists()) {
+                    file.delete()
                 }
+                try {
+                    val out = FileOutputStream(file)
+                    bitmap?.compress(Bitmap.CompressFormat.PNG, 100, out)
+                    out.flush()
+                    out.close()
+                } catch (e: java.lang.Exception) {
+                }
+                imagesSaved += 1
+                endImageService()
             }
         }
     }
 
-    private fun saveImages(images: ArrayList<String>) {
+    private fun endImageService() {
+        if (imagesSaved >= imagesSize)
+            onEndService()
+    }
+
+    private fun saveImages(images: ArrayList<Image>) {
+        imagesSaved = images.size
         for (image in images) {
-
+            val target = getTarget(image.name + ".png")
+            targets.add(target)
             Picasso.get()
-                    .load(image)
-                    .into()
-
+                    .load(image.image)
+                    .into(target)
         }
     }
 

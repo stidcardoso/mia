@@ -1,5 +1,9 @@
 package com.teda.miaanticonceptivos.util
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import com.teda.miaanticonceptivos.App
+import java.io.File
 import java.text.NumberFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -26,6 +30,18 @@ object Utilities {
         } catch (e: NumberFormatException) {
             e.message
             ""
+        }
+    }
+
+    fun getImage(name: String): Bitmap? {
+        return try {
+            val file = File(App.app!!.applicationContext.filesDir, "$name.png")
+            if (file.exists())
+                BitmapFactory.decodeFile(file.absolutePath)
+            else
+                null
+        } catch (e: Exception) {
+            null
         }
     }
 

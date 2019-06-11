@@ -77,7 +77,7 @@ class RealmDao {
         return ArrayList(realm.where(Prevention::class.java).findAll())
     }
 
-    fun insertImage(image: Image) {
+    fun insertImages(image: ArrayList<Image>) {
         realm.executeTransaction {
             realm.where(Image::class.java).findAll().deleteAllFromRealm()
             realm.insertOrUpdate(image)

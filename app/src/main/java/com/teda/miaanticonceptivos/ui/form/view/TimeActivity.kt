@@ -20,10 +20,10 @@ class TimeActivity : AppCompatActivity() {
         include.setOnClickListener {
             startActivity(Intent(this, SelectTimeActivity::class.java))
         }
-        Glide.with(this)
+        /*Glide.with(this)
                 .load(realmDao.getImage().priority)
                 .error(ContextCompat.getDrawable(this, R.drawable.time_background))
-                .into(imageBackground)
+                .into(imageBackground)*/
     }
 
     override fun onDestroy() {
