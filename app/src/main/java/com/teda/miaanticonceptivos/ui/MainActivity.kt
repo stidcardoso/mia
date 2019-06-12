@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
-import com.teda.miaanticonceptivos.ui.home.CompareFragment
 import com.teda.miaanticonceptivos.ui.home.EmergencyFragment
+import com.teda.miaanticonceptivos.ui.home.view.CompareFragment
 import com.teda.miaanticonceptivos.ui.home.view.HomeFragment
 import com.teda.miaanticonceptivos.ui.home.view.PreventFragment
 import com.teda.miaanticonceptivos.ui.methods.view.fragment.*

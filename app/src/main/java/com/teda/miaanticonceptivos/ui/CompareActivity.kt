@@ -9,7 +9,7 @@ class CompareActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_pricing)
+        setContentView(R.layout.fragment_compare)
         btnClose.setOnClickListener {
             onBackPressed()
         }
