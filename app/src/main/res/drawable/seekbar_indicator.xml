@@ -4,8 +4,8 @@
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="oval">
             <size
-                android:height="50dp"
-                android:width="50dp"/>
+                android:height="60dp"
+                android:width="60dp"/>
 
             <solid
                 android:color="#30F9C83F"/>
@@ -14,7 +14,7 @@
     </item>
 
     <item>
-        <inset android:inset="8dp">
+        <inset android:inset="10dp">
             <shape xmlns:android="http://schemas.android.com/apk/res/android"
                 android:shape="oval">
 
@@ -26,7 +26,7 @@
     </item>
 
     <item>
-        <inset android:inset="8dp">
+        <inset android:inset="10dp">
             <shape xmlns:android="http://schemas.android.com/apk/res/android"
                 android:shape="oval">
 

@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.local.RealmDao
+import com.teda.miaanticonceptivos.util.Storage
+import com.teda.miaanticonceptivos.util.Utilities
 import kotlinx.android.synthetic.main.activity_discreet.*
 
 class DiscreetActivity : AppCompatActivity() {
@@ -19,6 +21,7 @@ class DiscreetActivity : AppCompatActivity() {
         include.setOnClickListener {
             startActivity(Intent(this, SelectDiscreetActivity::class.java))
         }
+        Utilities.getImage(Storage.imagesNames[2])?.let { imageBackground.setImageBitmap(it) }
         /*Glide.with(this)
                 .load(realmDao.getImage().discreet)
                 .error(ContextCompat.getDrawable(this, R.drawable.discreet_background2))

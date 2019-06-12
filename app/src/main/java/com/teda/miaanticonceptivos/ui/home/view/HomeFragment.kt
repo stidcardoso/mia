@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,6 +57,7 @@ class HomeFragment : Fragment(), HomeContract.View {
             startActivity(i)
             activity?.finishAffinity()
         }
+        Utilities.getImage(Storage.imagesNames[4])?.let { imageBackground.setImageBitmap(it) }
     }
 
     private fun getResults() {
@@ -131,12 +133,15 @@ class HomeFragment : Fragment(), HomeContract.View {
         }
 
         if (result.size > 2) {
+            text3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24F)
             text3.text = result[2].name
             imageRes3.setImageDrawable(ContextCompat.getDrawable(context!!, result[2].icon ?: 0))
             imageRes3.setOnClickListener {
                 if (result.size > 2)
                     changeFragment(result[2].id ?: 0)
             }
+        } else {
+            imageView25.visibility = View.INVISIBLE
         }
     }
 

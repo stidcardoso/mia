@@ -145,7 +145,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView23"
         app:layout_constraintStart_toStartOf="@+id/imageView23"
         app:layout_constraintTop_toBottomOf="@+id/imageView23"
-        tools:text="CONDON" />
+        tools:text="---" />
 
     <ImageView
         android:id="@+id/imageView24"
@@ -177,7 +177,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView24"
         app:layout_constraintStart_toStartOf="@+id/imageView24"
         app:layout_constraintTop_toBottomOf="@+id/imageView24"
-        tools:text="CONDON" />
+        tools:text="---" />
 
     <ImageView
         android:id="@+id/imageRes1"
@@ -207,16 +207,12 @@
 
     <TextView
         android:id="@+id/text3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:fontFamily="@font/monserrat_regular"
-        android:text="CONDÓN"
+        android:text="@string/condom_description"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView25"
         app:layout_constraintStart_toStartOf="@+id/imageView25"
         app:layout_constraintTop_toBottomOf="@+id/imageView25" />

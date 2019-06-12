@@ -40,7 +40,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
             v?.loadNormalSplash()
             return
         }
-    
+
         firebase.collection(FbConstants.PARAMS)
                 .get()
                 .addOnCompleteListener { result ->

@@ -12,19 +12,36 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.33" />
+        app:layout_constraintWidth_percent="0.32" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/qr_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/imageQR"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:fontFamily="@font/monserrat_regular"
         android:text="@string/qr_text"
         android:textColor="@color/red"
-        android:textSize="30sp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageQR"
-        app:layout_constraintStart_toEndOf="@+id/imageQR"
-        app:layout_constraintTop_toTopOf="@+id/imageQR" />
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageQR"
+        app:layout_constraintVertical_bias="0.502" />
 
 </android.support.constraint.ConstraintLayout>

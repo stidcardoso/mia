@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.local.RealmDao
+import com.teda.miaanticonceptivos.util.Storage
 import com.teda.miaanticonceptivos.util.Utilities
 import kotlinx.android.synthetic.main.activity_priority.*
 
@@ -21,11 +22,12 @@ class PrioritiesActivity : AppCompatActivity() {
             startActivity(Intent(this, SelectPrioritiesActivity::class.java))
             Utilities.startingTime()
         }
+        Utilities.getImage(Storage.imagesNames[1])?.let { imageBackground.setImageBitmap(it) }
 
-      /*  Glide.with(this)
-                .load(realmDao.getImage().priority)
-                .error(ContextCompat.getDrawable(this, R.drawable.priorities_background))
-                .into(imageBackground)*/
+        /*  Glide.with(this)
+                  .load(realmDao.getImage().priority)
+                  .error(ContextCompat.getDrawable(this, R.drawable.priorities_background))
+                  .into(imageBackground)*/
     }
 
     override fun onDestroy() {

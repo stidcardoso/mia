@@ -29,10 +29,10 @@ object Storage {
 
     var imagesNames = arrayListOf(
             "welcome",
-            "timing",
-            "main",
+            "priority",
             "discreet",
-            "priority"
+            "timing",
+            "main"
     )
 
     var selectedPriorities = arrayListOf<Priority?>()

@@ -27,9 +27,9 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginStart="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/monserrat_bold"
         android:includeFontPadding="false"
         android:text="¿QUÉ PRIORIDADES TIENES PARA TU VIDA?"
@@ -41,9 +41,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/monserrat_regular"
         android:text="Pregunta 1 de 3"
         android:textColor="#2F2834"
@@ -55,8 +55,8 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
         android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/monserrat_medium"
         android:includeFontPadding="false"
@@ -81,12 +81,12 @@
         android:id="@+id/imageTravel"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_travel"
         android:tint="@color/orange"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
@@ -119,12 +119,12 @@
         android:id="@+id/imageStudy"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_study"
         android:tint="@color/orange"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
@@ -155,12 +155,12 @@
         android:id="@+id/imageWork"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_work"
         android:tint="@color/orange"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
@@ -191,12 +191,12 @@
         android:id="@+id/imageSon"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_son"
         android:tint="@color/orange"
         app:layout_constraintBottom_toBottomOf="@+id/imageView9"
@@ -227,12 +227,12 @@
         android:id="@+id/imageTime"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_time"
         android:tint="@color/orange"
         app:layout_constraintBottom_toBottomOf="@+id/imageView10"
@@ -292,27 +292,27 @@
         app:layout_constraintBottom_toTopOf="@id/include"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toStartOf="@+id/image2"
-        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHeight_percent="0.27"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <android.support.constraint.Group
         android:id="@+id/groupPlace1"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imagePlace1, textSelected1"/>
+        android:visibility="gone"
+        app:constraint_referenced_ids="imagePlace1, textSelected1, viewLine1" />
 
     <ImageView
         android:id="@+id/imagePlace1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:src="@drawable/ic_travel"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toEndOf="@+id/image1"
@@ -321,6 +321,7 @@
         app:layout_constraintTop_toTopOf="@+id/image1" />
 
     <TextView
+        style="@style/textSelectedPriority"
         android:id="@+id/textSelected1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -331,15 +332,24 @@
         app:layout_constraintTop_toBottomOf="@+id/imagePlace1"
         tools:text="asdfasdf" />
 
+    <View
+        style="@style/viewLineSelectedPriority"
+        android:id="@+id/viewLine1"
+        android:layout_width="0dp"
+        android:background="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@id/image1"
+        app:layout_constraintStart_toStartOf="@id/image1"
+        app:layout_constraintTop_toBottomOf="@id/textSelected1" />
+
     <TextView
         android:id="@+id/textPlace1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/monserrat_extrabold"
         android:includeFontPadding="false"
         android:text="1"
@@ -357,27 +367,27 @@
         android:src="@drawable/circle_gray"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toStartOf="@+id/image3"
-        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHeight_percent="0.27"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/image1"
         app:layout_constraintTop_toTopOf="@id/image1" />
 
     <android.support.constraint.Group
         android:id="@+id/groupPlace2"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imagePlace2, textSelected2"/>
+        android:visibility="gone"
+        app:constraint_referenced_ids="imagePlace2, textSelected2, viewLine2" />
 
     <ImageView
         android:id="@+id/imagePlace2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toEndOf="@+id/image2"
         app:layout_constraintHeight_percent="0.1"
@@ -385,6 +395,7 @@
         app:layout_constraintTop_toTopOf="@+id/image2" />
 
     <TextView
+        style="@style/textSelectedPriority"
         android:id="@+id/textSelected2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -395,15 +406,24 @@
         app:layout_constraintTop_toBottomOf="@+id/imagePlace2"
         tools:text="asdfasdf" />
 
+    <View
+        style="@style/viewLineSelectedPriority"
+        android:id="@+id/viewLine2"
+        android:layout_width="0dp"
+        android:background="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@id/image2"
+        app:layout_constraintStart_toStartOf="@id/image2"
+        app:layout_constraintTop_toBottomOf="@id/textSelected2" />
+
     <TextView
         android:id="@+id/textPlace2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/monserrat_extrabold"
         android:includeFontPadding="false"
         android:text="2"
@@ -416,32 +436,32 @@
 
     <ImageView
         android:id="@+id/image3"
-        android:layout_width="0dp"
+        android:layout_width="194dp"
         android:layout_height="0dp"
         android:src="@drawable/circle_gray"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHeight_percent="0.27"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/image2"
         app:layout_constraintTop_toTopOf="@id/image1" />
 
     <android.support.constraint.Group
         android:id="@+id/groupPlace3"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imagePlace3, textSelected3"/>
+        android:visibility="gone"
+        app:constraint_referenced_ids="imagePlace3, textSelected3, viewLine3" />
 
     <ImageView
         android:id="@+id/imagePlace3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toEndOf="@+id/image3"
         app:layout_constraintHeight_percent="0.1"
@@ -449,6 +469,7 @@
         app:layout_constraintTop_toTopOf="@+id/image2" />
 
     <TextView
+        style="@style/textSelectedPriority"
         android:id="@+id/textSelected3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -459,15 +480,24 @@
         app:layout_constraintTop_toBottomOf="@+id/imagePlace3"
         tools:text="asdfasdf" />
 
+    <View
+        style="@style/viewLineSelectedPriority"
+        android:id="@+id/viewLine3"
+        android:layout_width="0dp"
+        android:background="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@id/image3"
+        app:layout_constraintStart_toStartOf="@id/image3"
+        app:layout_constraintTop_toBottomOf="@id/textSelected3" />
+
     <TextView
         android:id="@+id/textPlace3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/monserrat_extrabold"
         android:includeFontPadding="false"
         android:text="3"
@@ -498,9 +528,9 @@
         layout="@layout/button_accept"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
