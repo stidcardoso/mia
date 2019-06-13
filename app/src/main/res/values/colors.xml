@@ -10,5 +10,9 @@
     <color name="red">#AE1022</color>
     <color name="blue">#367588</color>
 
+    <color name="red_compare">#AB192A</color>
+    <color name="purple_compare">#67265B</color>
+    <color name="purple_light_compare">#9B1358</color>
+
     <color name="textPrimary">#101010</color>
 </resources>

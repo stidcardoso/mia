@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.teda.miaanticonceptivos.R
+import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.home.view.adapter.CompareAdapter
+import com.teda.miaanticonceptivos.ui.home.view.adapter.FaceAdapter
 import com.teda.miaanticonceptivos.util.Storage
 import kotlinx.android.synthetic.main.fragment_compare.*
 import kotlinx.android.synthetic.main.fragment_compares.*
@@ -26,7 +28,7 @@ class CompareFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.item_compare_method, container, false)
+        val v = inflater.inflate(R.layout.fragment_compares, container, false)
         return v
     }
 
@@ -43,16 +45,21 @@ class CompareFragment : Fragment() {
                 imageCompare.setImageResource(R.drawable.compare)
         }
         showMethods()
+        showFaces()
     }
 
     private fun showMethods() {
-        val adapter = CompareAdapter(Storage.methods)
-        recyclerMethods.layoutManager = GridLayoutManager(context, Storage.methods.size)
+        val methods = ArrayList(Storage.methods)
+        methods.add(Method(10, "CONDÓN", 1, 1, R.drawable.condon_res))
+        val adapter = CompareAdapter(methods)
+        recyclerMethods.layoutManager = GridLayoutManager(context, methods.size)
         recyclerMethods.adapter = adapter
     }
 
     private fun showFaces() {
-
+        val adapter = FaceAdapter(Storage.compareList)
+        recyclerFaces.layoutManager = GridLayoutManager(context, Storage.compareList[0].size)
+        recyclerFaces.adapter = adapter
     }
 
 }

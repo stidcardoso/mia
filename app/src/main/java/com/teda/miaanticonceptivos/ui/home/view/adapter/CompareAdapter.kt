@@ -9,7 +9,7 @@ import com.teda.miaanticonceptivos.data.model.Method
 class CompareAdapter(private val list: ArrayList<Method>) : RecyclerView.Adapter<CompareViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CompareViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_basic_view, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_compare_method, parent, false)
         return CompareViewHolder(view)
     }
 
