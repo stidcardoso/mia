@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.item_face.view.*
 
 class FaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun bind(score: Int) {
+    fun bind(score: Int, selectedPosition: Int?, arrayPosition: Int) {
         val face = when (score) {
             0 -> {
                 R.drawable.face_na
@@ -26,7 +26,10 @@ class FaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             }
         }
         itemView.imageFace.setImageResource(face)
-
+        if (selectedPosition == arrayPosition)
+            itemView.alpha = 1F
+        else if (selectedPosition != null)
+            itemView.alpha = 0.5F
     }
 
 }
