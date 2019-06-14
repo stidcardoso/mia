@@ -283,8 +283,7 @@
                 android:layout_marginRight="32dp"
                 android:src="@drawable/alert_condon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerAlarm"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/textAlarmTitle" />
 
             <fragment
                 android:id="@+id/qrFragment"

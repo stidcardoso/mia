@@ -16,7 +16,7 @@
     <dimen name="d50">50dp</dimen>
     <dimen name="d250">250dp</dimen>
 
-    <dimen name="qr_space">84dp</dimen>
+    <dimen name="qr_space">40dp</dimen>
 
 
     <dimen name="pricing_method_bg_size">100dp</dimen>

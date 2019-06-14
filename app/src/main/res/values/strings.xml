@@ -21,6 +21,18 @@
     <string name="select_your_method">Elige tu método</string>
     <string name="condom_description">Sólo el condón te protege contra las infecciones de transmisión sexual</string>
 
+    <!--compare titles-->
+    <string name="effectiveness">Efectividad</string>
+    <string name="side_effects">Efectos secundarios</string>
+    <string name="no_hormones">Sin hormonas</string>
+    <string name="decrease_menstruation">Disminuye menstruación</string>
+    <string name="decrease_menstruation_pain">Reduce dolor menstrual</string>
+    <string name="available_during_lactation">Apto durante lactancia</string>
+    <string name="infection_prevention">Previene infecciones</string>
+    <string name="save_money">Protege tu bolsillo</string>
+    <string name="duration">Duración</string>
+    <string name="discreet">Discreción</string>
+
     <!--terminos y condiciones-->
     <string name="terms_and_conditions">Aceptas usar esta APP y el dispositivo o interface que lo sustenta para tu uso personal y únicamente para el propósito aquí descrito. Te comprometes a no “hackear” esta aplicación, ni este dispositivo, ni hacer ingeniería inversa o realizar cualquier acto que pudiera tener el efecto de dañar su funcionamiento, violar su seguridad o interferir con su uso por parte de otros usuarios.</string>
 

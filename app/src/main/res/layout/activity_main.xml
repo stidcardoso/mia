@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/orange">
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -72,6 +73,7 @@
                     app:layout_constraintTop_toTopOf="@+id/textPermanent" />
 
                 <View
+                    app:layout_constraintStart_toStartOf="parent"
                     android:id="@+id/viewspace"
                     android:layout_width="0dp"
                     android:layout_height="18dp"
@@ -276,6 +278,7 @@
                     app:layout_constraintTop_toTopOf="@+id/textShort" />
 
                 <View
+                    app:layout_constraintStart_toStartOf="parent"
                     android:id="@+id/vspace2"
                     android:layout_width="0dp"
                     android:layout_height="18dp"
@@ -510,7 +513,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:src="@drawable/guideme_no_shadow"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -521,7 +524,16 @@
 
         </ScrollView>
 
+        <ImageView
+            android:alpha="0.5"
+            android:background="@drawable/shadow"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" />
+
     </android.support.constraint.ConstraintLayout>
+
+
 
     <FrameLayout
         android:id="@+id/container"
@@ -530,6 +542,5 @@
         android:visibility="visible">
 
     </FrameLayout>
-
 
 </android.support.v4.widget.SlidingPaneLayout>

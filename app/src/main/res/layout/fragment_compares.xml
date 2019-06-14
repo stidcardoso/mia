@@ -18,6 +18,117 @@
         app:layout_constraintStart_toEndOf="@id/sideBar"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerFaces"
+        app:layout_constraintEnd_toEndOf="@id/viewBackground"
+        app:layout_constraintStart_toStartOf="@id/viewBackground"
+        app:layout_constraintTop_toTopOf="@id/recyclerFaces">
+
+        <TextView
+            android:id="@+id/t1"
+            style="@style/textCompareTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/effectiveness"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t2"
+            style="@style/textCompareTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/side_effects"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t1" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/no_hormones"
+            android:id="@+id/t3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t2" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/decrease_menstruation"
+            android:id="@+id/t4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t3" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/decrease_menstruation_pain"
+            android:id="@+id/t5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t4" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/available_during_lactation"
+            android:id="@+id/t6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t5" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/infection_prevention"
+            android:id="@+id/t7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t6" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/save_money"
+            android:id="@+id/t8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t7" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/duration"
+            android:id="@+id/t9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t8" />
+
+        <TextView
+            style="@style/textCompareTitle"
+            android:text="@string/discreet"
+            android:id="@+id/t10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t9" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerMethods"
         android:layout_width="0dp"
@@ -28,10 +139,11 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerFaces"
+        android:layout_marginStart="2dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@id/imageInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/viewBackground"
@@ -39,8 +151,6 @@
 
     <ImageView
         android:id="@+id/imageInfo"
-        android:scaleType="fitStart"
-        android:adjustViewBounds="true"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="48dp"
@@ -48,6 +158,8 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
         android:src="@drawable/compare_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

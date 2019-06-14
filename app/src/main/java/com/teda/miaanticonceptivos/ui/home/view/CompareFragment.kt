@@ -10,10 +10,11 @@ import android.view.ViewGroup
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.ui.MainCallback
+import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.home.view.adapter.CompareAdapter
 import com.teda.miaanticonceptivos.ui.home.view.adapter.FaceAdapter
 import com.teda.miaanticonceptivos.util.Storage
-import kotlinx.android.synthetic.main.fragment_compare.*
+import kotlinx.android.synthetic.main.component_side_bar.*
 import kotlinx.android.synthetic.main.fragment_compares.*
 
 class CompareFragment : Fragment() {
@@ -34,6 +35,8 @@ class CompareFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        imageLight.visibility = View.GONE
+        DrawerHelper(sideBar, this)
         drawer.setOnClickListener {
             mainCallback.openDrawer()
         }
