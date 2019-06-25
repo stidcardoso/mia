@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/drawer"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
@@ -22,29 +22,29 @@
         android:id="@+id/appCompatTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="4dp"
-        app:autoSizeTextType="uniform"
+        android:layout_marginBottom="4dp"
         android:text="MENÚ"
         android:textColor="@color/orange"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/drawer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/drawer"
         app:layout_constraintTop_toTopOf="@+id/drawer" />
-
-
 
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:src="@drawable/available"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.18"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

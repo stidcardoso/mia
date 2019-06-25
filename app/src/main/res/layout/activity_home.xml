@@ -17,10 +17,10 @@
 
     <ImageView
         android:id="@+id/home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"

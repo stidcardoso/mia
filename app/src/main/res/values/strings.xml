@@ -21,6 +21,9 @@
     <string name="select_your_method">Elige tu método</string>
     <string name="condom_description">Sólo el condón te protege contra las infecciones de transmisión sexual</string>
 
+    <!--tutorial-->
+    <string name="title_tutorial">¿CÓMO PUEDES USAR NUESTRA APP?</string>
+
     <!--compare titles-->
     <string name="effectiveness">Efectividad</string>
     <string name="side_effects">Efectos secundarios</string>

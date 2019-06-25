@@ -12,7 +12,7 @@ class KnowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_know)
-        Handler().postDelayed(Runnable {
+        Handler().postDelayed({
             /* Create an Intent that will start the Menu-Activity. */
             val mainIntent = Intent(this, MainActivity::class.java)
             this.startActivity(mainIntent)

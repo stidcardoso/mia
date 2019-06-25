@@ -26,10 +26,16 @@ class FaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             }
         }
         itemView.imageFace.setImageResource(face)
-        if (selectedPosition == arrayPosition)
-            itemView.alpha = 1F
-        else if (selectedPosition != null)
-            itemView.alpha = 0.5F
+        /* if (selectedPosition == arrayPosition)
+             itemView.viewOver.visibility = View.GONE
+         else if (selectedPosition != null)
+             itemView.viewOver.visibility = View.VISIBLE*/
+        if (selectedPosition == null)
+            itemView.viewOver.visibility = View.GONE
+        else if (selectedPosition == arrayPosition)
+            itemView.viewOver.visibility = View.GONE
+        else
+            itemView.viewOver.visibility = View.VISIBLE
     }
 
 }

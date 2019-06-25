@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
@@ -62,14 +61,56 @@ class SelectTimeActivity : AppCompatActivity() {
             Storage.selectedTime = 1000
             selected(5)
         }
-        seekProgress.setOnTouchListener { _, _ ->
-            return@setOnTouchListener true
-        }
+        /*  seekProgress.setOnTouchListener { _, _ ->
+              return@setOnTouchListener true
+          }*/
+        seekProgress.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
+            override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
+                val sp = 1000 / 6
+                when (progress) {
+                    in 0..sp -> {
+                        Storage.selectedTime = 0
+                        selected(0, false)
+                    }
+                    in (sp+1)..(sp*2) -> {
+                        Storage.selectedTime = 1
+                        selected(1, false)
+                    }
+                    in ((sp*2)+1)..(sp*3) -> {
+                        Storage.selectedTime = 3
+                        selected(2, false)
+                    }
+                    in ((sp*3)+1)..(sp*4) -> {
+                        Storage.selectedTime = 36
+                        selected(3, false)
+                    }
+                    in ((sp*4)+1)..(sp*5) -> {
+                        Storage.selectedTime = 60
+                        selected(4, false)
+                    }
+                    in ((sp*5)+1)..(sp*6) -> {
+                        Storage.selectedTime = 1000
+                        selected(5, false)
+                    }
+                }
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
+
+        })
+
     }
 
-    private fun selected(position: Int) {
-        val progress = ((1000.0 / 6) * (position + 1) - (1000.0/12))
-        seekProgress.progress = progress.toInt()
+    private fun selected(position: Int, setProgress: Boolean = true) {
+        if(setProgress) {
+            val progress = ((1000.0 / 6) * (position + 1) - (1000.0 / 12))
+            seekProgress.progress = progress.toInt()
+        }
         selected = true
         for (i in 0..5) {
             if (i == position) {
