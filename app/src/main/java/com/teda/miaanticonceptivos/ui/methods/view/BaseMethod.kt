@@ -20,7 +20,7 @@ class BaseMethod(context: Context, tip: ImageView) {
             override fun onAnimationEnd(p0: Animation?) {
                 Handler().postDelayed({
                     tip.startAnimation(fadeOut)
-                }, 10000)
+                }, 6000)
             }
 
             override fun onAnimationStart(p0: Animation?) {

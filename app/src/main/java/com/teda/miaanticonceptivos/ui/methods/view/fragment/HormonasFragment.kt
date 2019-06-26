@@ -19,6 +19,7 @@ import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
+import com.teda.miaanticonceptivos.ui.methods.view.BaseMethod
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
 import kotlinx.android.synthetic.main.component_side_bar.*
 import kotlinx.android.synthetic.main.fragment_hormonas.*
@@ -43,6 +44,7 @@ class HormonasFragment : Fragment(), BaseMethodContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.getMethod(FbConstants.T_DE_HORMONAS)
+        BaseMethod(context!!, imageTip)
         DrawerHelper(sideBar, this)
         drawer.setOnClickListener {
             mainCallback.openDrawer()

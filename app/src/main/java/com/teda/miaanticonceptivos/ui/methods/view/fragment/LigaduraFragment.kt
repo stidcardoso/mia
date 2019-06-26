@@ -19,6 +19,7 @@ import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodPresenter
+import com.teda.miaanticonceptivos.ui.methods.view.BaseMethod
 import com.teda.miaanticonceptivos.ui.methods.view.BasicAdapter
 import com.teda.miaanticonceptivos.ui.pricing.view.PricingActivity
 import kotlinx.android.synthetic.main.component_side_bar.*
@@ -48,6 +49,7 @@ class LigaduraFragment : Fragment(), BaseMethodContract.View {
         recyclerSideEffects .isNestedScrollingEnabled = false
         presenter.getMethod(FbConstants.LIGADURA)
         DrawerHelper(sideBar, this)
+        BaseMethod(context!!, imageTip)
 
         drawer.setOnClickListener {
             mainCallback.openDrawer()

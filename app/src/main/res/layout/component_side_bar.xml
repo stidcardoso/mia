@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:background="#AE1022">
+        android:background="#AE1022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <View
             android:id="@+id/view8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/orange"
             app:layout_constraintDimensionRatio="H, 1:1.5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/orange" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ImageView
