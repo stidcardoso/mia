@@ -1,6 +1,7 @@
 package com.teda.miaanticonceptivos.ui.home.view
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
@@ -13,6 +14,7 @@ import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.home.view.adapter.CompareAdapter
 import com.teda.miaanticonceptivos.ui.home.view.adapter.FaceAdapter
+import com.teda.miaanticonceptivos.ui.pricing.view.PricingActivity
 import com.teda.miaanticonceptivos.util.Storage
 import kotlinx.android.synthetic.main.component_side_bar.*
 import kotlinx.android.synthetic.main.fragment_compares.*
@@ -41,11 +43,13 @@ class CompareFragment : Fragment() {
             mainCallback.openDrawer()
         }
         imageCompare.setOnClickListener {
-            compare = !compare
-            if (compare)
-                imageCompare.setImageResource(R.drawable.compare_selected)
-            else
-                imageCompare.setImageResource(R.drawable.compare)
+            startActivity(Intent(context, PricingActivity::class.java))
+
+            /* compare = !compare
+             if (compare)
+                 imageCompare.setImageResource(R.drawable.compare_selected)
+             else
+                 imageCompare.setImageResource(R.drawable.compare)*/
         }
         showMethods()
         showFaces()

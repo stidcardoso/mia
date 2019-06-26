@@ -47,7 +47,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         home.setOnClickListener {
             mainCallback.openDrawer()
         }
-        btnRestart.setOnClickListener {
+        retryBackground.setOnClickListener {
             val time = TimeAnalytics()
             time.duration = Utilities.endTime()
             time.id = UUID.randomUUID().toString()
