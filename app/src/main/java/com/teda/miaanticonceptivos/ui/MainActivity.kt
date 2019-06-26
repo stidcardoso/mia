@@ -33,21 +33,27 @@ class MainActivity : AppCompatActivity(), MainCallback {
         }
 
         textPermanent.setOnClickListener {
-            group1.visibility = View.VISIBLE
-            group2.visibility = View.GONE
-            group3.visibility = View.GONE
+            permanents()
+        }
+
+        imageView15.setOnClickListener {
+            permanents()
         }
 
         textDuration.setOnClickListener {
-            group1.visibility = View.GONE
-            group2.visibility = View.VISIBLE
-            group3.visibility = View.GONE
+            duration()
+        }
+
+        imageView16.setOnClickListener {
+            duration()
         }
 
         textShort.setOnClickListener {
-            group1.visibility = View.GONE
-            group2.visibility = View.GONE
-            group3.visibility = View.VISIBLE
+            short()
+        }
+
+        imageView17.setOnClickListener {
+            short()
         }
 
         textLigadura.setOnClickListener {
@@ -101,14 +107,26 @@ class MainActivity : AppCompatActivity(), MainCallback {
 //            startActivity(Intent(this, EmergencyActivity::class.java))
         }
 
+        imageView19.setOnClickListener {
+            replaceFragment(EmergencyFragment())
+        }
+
         textPrevention.setOnClickListener {
             replaceFragment(PreventFragment())
             //            startActivity(Intent(this, PreventActivity::class.java))
         }
 
+        imageView20.setOnClickListener {
+            replaceFragment(PreventFragment())
+        }
+
         textCompare.setOnClickListener {
             replaceFragment(CompareFragment())
             //            startActivity(Intent(this, AnilloActivity::class.java))
+        }
+
+        imageView21.setOnClickListener {
+            replaceFragment(CompareFragment())
         }
 
         textResults.setOnClickListener {
@@ -123,6 +141,24 @@ class MainActivity : AppCompatActivity(), MainCallback {
         ft.replace(R.id.container, fragment)
         ft.commit()
         slidingPane.closePane()
+    }
+
+    private fun permanents() {
+        group1.visibility = View.VISIBLE
+        group2.visibility = View.GONE
+        group3.visibility = View.GONE
+    }
+
+    private fun duration() {
+        group1.visibility = View.GONE
+        group2.visibility = View.VISIBLE
+        group3.visibility = View.GONE
+    }
+
+    private fun short() {
+        group1.visibility = View.GONE
+        group2.visibility = View.GONE
+        group3.visibility = View.VISIBLE
     }
 
     override fun openDrawer() {
@@ -157,7 +193,7 @@ class MainActivity : AppCompatActivity(), MainCallback {
     </android.support.constraint.ConstraintLayout>
 
 
-     ------------------------------------------------------
+    ------------------------------------------------------
 
     package com.example.scardoso.myapplication.view.adapter
 
@@ -226,7 +262,7 @@ class MainActivity : AppCompatActivity(), MainCallback {
     }
 
     ------------------------------------------------------------------------------------
-    
+
     class Activity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

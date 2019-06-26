@@ -10,7 +10,6 @@
         android:layout_height="match_parent"
         android:background="@color/orange">
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -49,23 +48,23 @@
                 <TextView
                     android:id="@+id/textPermanent"
                     style="@style/ItemNav"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="PERMANENTES"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView15"
                     app:layout_constraintTop_toBottomOf="@id/textClose" />
 
                 <ImageView
                     android:id="@+id/imageView15"
+                    style="@style/ImageNav"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:src="@drawable/permanente"
                     app:layout_constraintBottom_toBottomOf="@+id/textPermanent"
                     app:layout_constraintDimensionRatio="H, 1:1"
@@ -73,10 +72,10 @@
                     app:layout_constraintTop_toTopOf="@+id/textPermanent" />
 
                 <View
-                    app:layout_constraintStart_toStartOf="parent"
                     android:id="@+id/viewspace"
                     android:layout_width="0dp"
-                    android:layout_height="18dp"
+                    android:layout_height="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textPermanent" />
 
                 <android.support.constraint.Group
@@ -94,8 +93,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="LIGADURA"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +118,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="VASECTOMIA"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -138,34 +137,32 @@
 
                 <TextView
                     android:id="@+id/textDuration"
-                    android:layout_width="wrap_content"
+                    style="@style/ItemNav"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="18dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="LARGA DURACIÓN"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView16"
                     app:layout_constraintTop_toBottomOf="@id/view3" />
 
                 <ImageView
                     android:id="@+id/imageView16"
+                    style="@style/ImageNav"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:src="@drawable/long_term"
                     android:tint="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/textDuration"
-                    app:layout_constraintDimensionRatio="H, 1:1"
+                    app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textDuration" />
 
                 <View
                     android:id="@+id/vspace1"
                     android:layout_width="0dp"
-                    android:layout_height="18dp"
+                    android:layout_height="0dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textDuration" />
 
@@ -184,8 +181,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="T DE COBRE"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -209,8 +206,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="T DE HORMONAS"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -234,8 +231,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="IMPLANTE"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -253,23 +250,21 @@
 
                 <TextView
                     android:id="@+id/textShort"
-                    android:layout_width="wrap_content"
+                    style="@style/ItemNav"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="18dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="CORTA DURACIÓN"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView17"
                     app:layout_constraintTop_toBottomOf="@id/view4" />
 
                 <ImageView
                     android:id="@+id/imageView17"
+                    style="@style/ImageNav"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:src="@drawable/watch"
                     android:tint="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/textShort"
@@ -278,10 +273,10 @@
                     app:layout_constraintTop_toTopOf="@+id/textShort" />
 
                 <View
-                    app:layout_constraintStart_toStartOf="parent"
                     android:id="@+id/vspace2"
                     android:layout_width="0dp"
-                    android:layout_height="18dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textShort" />
 
                 <android.support.constraint.Group
@@ -299,8 +294,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="INYECTABLES"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -324,8 +319,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="ORALES"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -349,8 +344,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="PARCHE"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -374,8 +369,8 @@
                     android:background="#F3C23F"
                     android:fontFamily="@font/monserrat_medium"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
                     android:text="ANILLO"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -393,23 +388,21 @@
 
                 <TextView
                     android:id="@+id/textEmergency"
-                    android:layout_width="wrap_content"
+                    style="@style/ItemNav"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="18dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="DE EMERGENCIA"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView19"
                     app:layout_constraintTop_toBottomOf="@id/view5" />
 
                 <ImageView
                     android:id="@+id/imageView19"
+                    style="@style/ImageNav"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:src="@drawable/emergency"
                     android:tint="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/textEmergency"
@@ -420,7 +413,6 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="2dp"
-                    android:layout_marginTop="18dp"
                     android:background="@drawable/divider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -428,23 +420,21 @@
 
                 <TextView
                     android:id="@+id/textPrevention"
-                    android:layout_width="wrap_content"
+                    style="@style/ItemNav"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="PREVENCIÓN ITS"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView20"
                     app:layout_constraintTop_toBottomOf="@id/textEmergency" />
 
                 <ImageView
                     android:id="@+id/imageView20"
+                    style="@style/ImageNav"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:src="@drawable/shield"
                     android:tint="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/textPrevention"
@@ -455,7 +445,6 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="2dp"
-                    android:layout_marginTop="18dp"
                     android:background="@drawable/divider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -463,23 +452,23 @@
 
                 <TextView
                     android:id="@+id/textCompare"
-                    android:layout_width="wrap_content"
+                    style="@style/ItemNav"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="COMPARAR"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView21"
                     app:layout_constraintTop_toBottomOf="@id/textPrevention" />
 
                 <ImageView
                     android:id="@+id/imageView21"
+                    style="@style/ImageNav"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:src="@drawable/comparar"
                     app:layout_constraintBottom_toBottomOf="@+id/textCompare"
                     app:layout_constraintDimensionRatio="H, 1:1"
@@ -490,7 +479,6 @@
                     android:id="@+id/view7"
                     android:layout_width="0dp"
                     android:layout_height="2dp"
-                    android:layout_marginTop="18dp"
                     android:background="@drawable/divider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -500,8 +488,8 @@
                     android:id="@+id/textResults"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="36dp"
                     android:fontFamily="@font/monserrat_medium"
                     android:text="RESULTADOS"
@@ -525,21 +513,20 @@
         </ScrollView>
 
         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
             android:alpha="0.5"
             android:background="@drawable/shadow"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="30dp"
-            android:layout_height="match_parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
-
 
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible">
+        android:visibility="gone">
 
     </FrameLayout>
 
