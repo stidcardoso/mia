@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/sideBar"
@@ -47,29 +47,30 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.v7.widget.AppCompatTextView
+                android:layout_marginTop="32dp"
                 android:id="@+id/textTitle"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginLeft="32dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:fontFamily="@font/monserrat_bold"
                 android:includeFontPadding="false"
                 android:text="INYECTABLES"
                 android:textColor="#F3C23F"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHeight_percent="0.06"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:layout_marginTop="8dp"
                 android:id="@+id/textPercent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:fontFamily="@font/monserrat_medium"
                 android:text="De cada 1.000 mujeres que deciden realizarla le falla 30"
                 android:textColor="#C13435"
@@ -80,12 +81,12 @@
                 app:layout_constraintTop_toBottomOf="@id/textTitle" />
 
             <TextView
-                style="@style/textParagraph"
                 android:id="@+id/textDesc"
+                style="@style/textParagraph"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/monserrat_light"
                 android:paddingBottom="8dp"
@@ -108,24 +109,22 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="60dp"
                 android:layout_marginRight="60dp"
-                android:layout_marginTop="24dp"
                 android:src="@drawable/available"
-                app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.12"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
                 android:fitsSystemWindows="true"
                 android:src="@drawable/woman"
                 app:layout_constraintBottom_toBottomOf="@+id/textPercent"
@@ -166,18 +165,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/view" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
-                android:src="@drawable/alert_condon"
-                app:layout_constraintBottom_toTopOf="@+id/textTitleRecommendations"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view"
-                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/textTitleRecommendations"
@@ -304,6 +291,18 @@
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageTip"
+        style="@style/imageTip"
+        android:layout_width="@dimen/tip_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/alert_condon"
+        app:layout_constraintBottom_toBottomOf="@id/sideBar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

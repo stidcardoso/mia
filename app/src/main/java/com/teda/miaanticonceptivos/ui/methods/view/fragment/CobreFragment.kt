@@ -42,6 +42,9 @@ class CobreFragment : Fragment(), BaseMethodContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        recyclerAlarm.isNestedScrollingEnabled = false
+        recyclerFeatures.isNestedScrollingEnabled = false
+        recyclerSideEffects .isNestedScrollingEnabled = false
         presenter.getMethod(FbConstants.T_DE_COBRE)
         DrawerHelper(sideBar, this)
         drawer.setOnClickListener {

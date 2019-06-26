@@ -46,9 +46,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.v7.widget.AppCompatTextView
+                android:layout_marginTop="32dp"
                 android:id="@+id/textTitle"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="70dp"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
                 android:fontFamily="@font/monserrat_bold"
@@ -57,11 +58,11 @@
                 android:textColor="#F3C23F"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHeight_percent="0.09"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:layout_marginTop="16dp"
                 android:id="@+id/textPercent"
                 app:layout_constrainedWidth="true"
                 android:layout_width="wrap_content"
@@ -106,15 +107,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginEnd="60dp"
                 android:layout_marginRight="60dp"
                 android:layout_marginTop="24dp"
                 android:src="@drawable/available"
-                app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_percent="0.13"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
@@ -163,18 +162,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/view" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
-                android:src="@drawable/alert_condon"
-                app:layout_constraintBottom_toTopOf="@+id/textTitleRecommendations"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view"
-                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/textTitleRecommendations"
@@ -300,6 +287,18 @@
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageTip"
+        style="@style/imageTip"
+        android:layout_width="@dimen/tip_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/alert_condon"
+        app:layout_constraintBottom_toBottomOf="@id/sideBar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <include
         android:id="@+id/tip"

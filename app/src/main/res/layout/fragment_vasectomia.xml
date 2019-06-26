@@ -9,11 +9,9 @@
         android:id="@+id/sideBar"
         layout="@layout/component_side_bar" />
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,8 +20,8 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@color/white"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline"
@@ -52,15 +50,15 @@
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textTitle"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/monserrat_bold"
                 android:text="VASECTOMIA"
                 android:textColor="#F3C23F"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHeight_percent="0.1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:fontFamily="@font/monserrat_medium"
@@ -104,6 +103,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="80dp"
                 android:layout_marginRight="80dp"
                 android:paddingTop="16dp"
@@ -294,7 +294,7 @@
 
         </android.support.constraint.ConstraintLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
     <FrameLayout
         android:id="@+id/container"
@@ -311,17 +311,6 @@
 
     </FrameLayout>
 
-    <include
-        android:id="@+id/tip"
-        layout="@layout/fragment_tip"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/constraintLayout"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageTip"
         style="@style/imageTip"
@@ -334,5 +323,15 @@
         app:layout_constraintBottom_toBottomOf="@id/sideBar"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <include
+        android:id="@+id/tip"
+        layout="@layout/fragment_tip"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

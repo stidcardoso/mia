@@ -81,7 +81,8 @@
         android:id="@+id/sideBar"
         layout="@layout/component_side_bar" />
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,21 +123,22 @@
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textTitle"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/monserrat_bold"
                 android:includeFontPadding="false"
                 android:text="LIGADURA"
                 android:textColor="#F3C23F"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHeight_percent="0.08"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textPercent"
+                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -205,15 +207,11 @@
                 app:layout_constraintTop_toTopOf="@+id/textPercent" />
 
             <TextView
+                style="@style/TextTitleMethodDescription"
                 android:id="@+id/textFeatures"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
-                android:fontFamily="@font/monserrat_bold"
                 android:text="CARACTERÍSTICAS"
-                android:textColor="@color/black"
-                android:textSize="50sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/guideline" />
 
@@ -239,28 +237,15 @@
                 app:layout_constraintStart_toStartOf="@id/textFeatures"
                 app:layout_constraintTop_toBottomOf="@id/view" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
-                android:src="@drawable/alert_condon"
-                app:layout_constraintBottom_toTopOf="@+id/textTitleRecommendations"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view"
-                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
+                style="@style/TextTitleMethodDescription"
                 android:id="@+id/textTitleRecommendations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/monserrat_bold"
                 android:text="RECOMENDACIONES"
-                android:textColor="@color/black"
-                android:textSize="50sp"
-                app:layout_constraintStart_toStartOf="@id/textFeatures"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerFeatures" />
 
             <View
@@ -277,13 +262,15 @@
 
             <TextView
                 android:id="@+id/textProcedureTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/monserrat_medium"
                 android:text="PROCEDIMIENTO"
                 android:textColor="#000000"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="@id/textFeatures"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/viewRecommendations" />
 
             <TextView
@@ -303,14 +290,16 @@
 
             <TextView
                 android:id="@+id/textSideEffectsTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:fontFamily="@font/monserrat_medium"
                 android:paddingTop="16dp"
                 android:text="POSIBLES EFECTOS SECUNDARIOS"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="@id/textFeatures"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textProcedure" />
 
             <TextView
@@ -375,7 +364,19 @@
 
         </android.support.constraint.ConstraintLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/imageTip"
+        style="@style/imageTip"
+        android:layout_width="@dimen/tip_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/alert_condon"
+        app:layout_constraintBottom_toBottomOf="@id/sideBar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <include
         android:id="@+id/tip"
