@@ -115,11 +115,11 @@ class SelectPrioritiesActivity : AppCompatActivity() {
         }
     }
 
-    fun validate(): Boolean {
-        var b = true
+    private fun validate(): Boolean {
+        var b = false
         for (i in 0..2) {
-            if (selected[i] == null) {
-                b = false
+            if (selected[i] != null) {
+                b = true
                 break
             }
         }
