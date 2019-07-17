@@ -2,7 +2,9 @@ package com.teda.miaanticonceptivos.util
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.support.v4.app.Fragment
 import com.teda.miaanticonceptivos.App
+import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import java.io.File
 import java.text.NumberFormat
 import java.util.*
@@ -42,6 +44,21 @@ object Utilities {
                 null
         } catch (e: Exception) {
             null
+        }
+    }
+
+    fun getFragmentMethod(id: Int): Fragment {
+        return when (id) {
+            1 -> LigaduraFragment()
+            2 -> VasectomiaFragment()
+            3 -> CobreFragment()
+            4 -> HormonasFragment()
+            5 -> ImplanteFragment()
+            6 -> InyectablesFragment()
+            7 -> OralesFragment()
+            8 -> ParcheFragment()
+            9 -> AnilloFragment()
+            else -> LigaduraFragment()
         }
     }
 

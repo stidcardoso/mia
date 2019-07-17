@@ -23,13 +23,17 @@ class FaceAdapter(private val list: ArrayList<ArrayList<Int>>) : RecyclerView.Ad
         val valuePosition = position - (arrayPosition * 10)
         holder.bind(list[arrayPosition][valuePosition], selectedPosition, arrayPosition)
         holder.itemView.setOnClickListener {
-            selectedPosition =
-                    if (selectedPosition == arrayPosition)
-                        null
-                    else
-                        arrayPosition
-            notifyDataSetChanged()
+            setSelectedPosition(arrayPosition)
         }
+    }
+
+    fun setSelectedPosition(position: Int) {
+        selectedPosition =
+                if (selectedPosition == position)
+                    null
+                else
+                    position
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = list.size * list[0].size

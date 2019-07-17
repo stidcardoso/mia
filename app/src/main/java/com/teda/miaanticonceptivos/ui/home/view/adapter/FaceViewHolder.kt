@@ -38,4 +38,8 @@ class FaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             itemView.viewOver.visibility = View.VISIBLE
     }
 
+    fun highlight() {
+
+    }
+
 }

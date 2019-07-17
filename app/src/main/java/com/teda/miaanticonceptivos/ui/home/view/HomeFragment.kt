@@ -19,7 +19,6 @@ import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.form.view.TutorialActivity
 import com.teda.miaanticonceptivos.ui.home.presenter.HomeContract
 import com.teda.miaanticonceptivos.ui.home.presenter.HomePresenter
-import com.teda.miaanticonceptivos.ui.methods.view.fragment.*
 import com.teda.miaanticonceptivos.util.Storage
 import com.teda.miaanticonceptivos.util.Utilities
 import kotlinx.android.synthetic.main.activity_home.*
@@ -82,10 +81,10 @@ class HomeFragment : Fragment(), HomeContract.View {
         result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
-                Math.abs(m1!!.duration ?: 0 - Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
-                - Storage.selectedTime) -> 1
-                Math.abs(m1.duration ?: 0 - Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
-                - Storage.selectedTime) -> 0
+                Math.abs(m1!!.duration ?: 0-Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
+                -Storage.selectedTime) -> 1
+                Math.abs(m1.duration ?: 0-Storage.selectedTime) == Math.abs(m2!!.duration ?: 0
+                -Storage.selectedTime) -> 0
                 else -> -1
             }
 
@@ -146,19 +145,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     private fun changeFragment(id: Int) {
-        val fragment: Fragment = when (id) {
-            1 -> LigaduraFragment()
-            2 -> VasectomiaFragment()
-            3 -> CobreFragment()
-            4 -> HormonasFragment()
-            5 -> ImplanteFragment()
-            6 -> InyectablesFragment()
-            7 -> OralesFragment()
-            8 -> ParcheFragment()
-            9 -> AnilloFragment()
-            else -> LigaduraFragment()
-        }
-        mainCallback.goDetail(fragment)
+        mainCallback.goDetail(Utilities.getFragmentMethod(id))
     }
 
     override fun showImage(url: String) {
