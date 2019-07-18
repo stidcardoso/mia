@@ -30,7 +30,7 @@ class SelectPrioritiesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_priorities)
-        include.setOnClickListener {
+        include.setOnClickListener {_ ->
             if (validate()) {
                 /*for (priority in Storage.selectedPriorities) {
                     if (priority!!.id == 3) {

@@ -61,6 +61,10 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     private fun getResults() {
         var methods = Storage.methods.toList()
+        methods = methods.filter { it.id != 1 }
+        methods = methods.filter { it.id != 2 }
+        methods = methods.filter { it.id != 8 }
+        methods = methods.filter { it.id != 9 }
 //        var filteredMethods: List<Method>
         val result = arrayListOf<Method>()
         if (Storage.sonSelected)
@@ -72,13 +76,23 @@ class HomeFragment : Fragment(), HomeContract.View {
                 it.discreet == Storage.discreetSelected
             }
         }
-        if (methods.size <= 2) {
+        if (Storage.selectedTime >= 12) {
+            methods.filter { it.duration ?: 0 >= 36 }
+            showResult(ArrayList(methods))
+            saveResults(ArrayList(methods))
+        } else {
+            methods = methods.filter { it.duration ?: 0 >= Storage.selectedTime }
+            methods = methods.sortedWith(compareBy { it.duration })
+            showResult(ArrayList(methods))
+            saveResults(ArrayList(methods))
+        }
+        /*if (methods.size <= 2) {
             showResult(ArrayList(methods))
             saveResults(ArrayList(methods))
             return
-        }
+        }*/
 //        methods.shuffled()
-        result.add(methods.first())
+        /*result.add(methods.first())
         methods = methods.sortedWith(object : Comparator<Method> {
             override fun compare(m1: Method?, m2: Method?): Int = when {
                 Math.abs(m1!!.duration ?: 0-Storage.selectedTime) > Math.abs(m2!!.duration ?: 0
@@ -88,9 +102,8 @@ class HomeFragment : Fragment(), HomeContract.View {
                 else -> -1
             }
 
-        })
-        showResult(ArrayList(methods))
-        saveResults(ArrayList(methods))
+        })*/
+
         /* for (method in methods) {
              val near = Math.abs(method.duration - Storage.selectedTime)
              if (result.isNotEmpty()) {
@@ -119,7 +132,8 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     private fun showResult(result: ArrayList<Method>) {
         text1.text = result.first().name
-        imageRes1.setImageDrawable(ContextCompat.getDrawable(context!!, result.first().icon ?: 0))
+        imageRes1.setImageDrawable(ContextCompat.getDrawable(context!!, result.first().icon
+                ?: 0))
         text2.text = result[1].name
         imageRes2.setImageDrawable(ContextCompat.getDrawable(context!!, result[1].icon ?: 0))
 
@@ -134,7 +148,8 @@ class HomeFragment : Fragment(), HomeContract.View {
         if (result.size > 2) {
             text3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24F)
             text3.text = result[2].name
-            imageRes3.setImageDrawable(ContextCompat.getDrawable(context!!, result[2].icon ?: 0))
+            imageRes3.setImageDrawable(ContextCompat.getDrawable(context!!, result[2].icon
+                    ?: 0))
             imageRes3.setOnClickListener {
                 if (result.size > 2)
                     changeFragment(result[2].id ?: 0)
