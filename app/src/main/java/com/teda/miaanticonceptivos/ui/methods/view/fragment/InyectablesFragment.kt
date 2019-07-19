@@ -44,6 +44,7 @@ class InyectablesFragment : Fragment(), BaseMethodContract.View {
         presenter.getMethod(FbConstants.INYECTABLES)
         BaseMethod(context!!, imageTip)
         DrawerHelper(sideBar, this)
+        imageLight.visibility = View.GONE
         drawer.setOnClickListener {
             mainCallback.openDrawer()
         }

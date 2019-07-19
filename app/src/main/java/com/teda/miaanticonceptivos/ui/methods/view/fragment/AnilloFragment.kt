@@ -43,6 +43,7 @@ class AnilloFragment : Fragment(), BaseMethodContract.View {
         BaseMethod(context!!, imageTip)
         presenter.getMethod(FbConstants.ANILLO)
         DrawerHelper(sideBar, this)
+        imageLight.visibility = View.GONE
         drawer.setOnClickListener {
             mainCallback.openDrawer()
         }

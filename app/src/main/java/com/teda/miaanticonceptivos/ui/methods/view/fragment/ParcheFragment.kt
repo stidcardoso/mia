@@ -44,6 +44,7 @@ class ParcheFragment : Fragment(), BaseMethodContract.View {
         presenter.getMethod(FbConstants.PARCHE)
         BaseMethod(context!!, imageTip)
         DrawerHelper(sideBar, this)
+        imageLight.visibility = View.GONE
         drawer.setOnClickListener {
             mainCallback.openDrawer()
         }

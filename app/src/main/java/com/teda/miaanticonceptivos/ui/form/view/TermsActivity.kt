@@ -22,6 +22,7 @@ class TermsActivity : AppCompatActivity(), TermsContract.View {
     }
 
     override fun showTerms(terms: String) {
-        textTerms.text = terms
+        val nTerms = terms.replace("_b", "\n")
+        textTerms.text = nTerms
     }
 }
