@@ -1,7 +1,6 @@
 package com.teda.miaanticonceptivos.ui.methods.view.fragment
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -12,8 +11,6 @@ import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.FbConstants
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.data.model.Params
-import com.teda.miaanticonceptivos.ui.CompareActivity
-import com.teda.miaanticonceptivos.ui.MainActivity
 import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.methods.presenter.BaseMethodContract

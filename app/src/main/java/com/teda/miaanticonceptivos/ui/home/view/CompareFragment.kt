@@ -60,7 +60,7 @@ class CompareFragment : Fragment() {
         showMethods()
         showFaces()
         for (i in 0 until featuresList.size)
-            featuresList[i].setOnClickListener { faceAdapter.setSelectedPosition(i + 1) }
+            featuresList[i].setOnClickListener { faceAdapter.setSelectedPosition(i) }
     }
 
     private fun showMethods() {
