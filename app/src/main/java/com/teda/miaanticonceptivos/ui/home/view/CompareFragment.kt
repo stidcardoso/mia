@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.teda.miaanticonceptivos.R
+import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.ui.MainCallback
 import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.home.view.adapter.CompareAdapter
@@ -65,7 +66,7 @@ class CompareFragment : Fragment() {
 
     private fun showMethods() {
         val methods = ArrayList(Storage.methods)
-//        methods.add(Method(10, "CONDÓN", 1, 1, R.drawable.condon_res))
+        methods.add(Method(10, "CONDÓN", 1, 1, R.drawable.condon_res))
         val listener = object : CompareAdapter.Callback {
             override fun onItemClicked(position: Int) {
                 mainCallback.goDetail(Utilities.getFragmentMethod(position))

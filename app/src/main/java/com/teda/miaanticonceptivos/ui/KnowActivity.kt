@@ -14,7 +14,7 @@ class KnowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_know)
-        Glide.with(this).asGif().load(R.raw.loading).into(imageView)
+        Glide.with(this).asGif().load(R.raw.loading2).into(imageView)
         Handler().postDelayed({
             /* Create an Intent that will start the Menu-Activity. */
             val mainIntent = Intent(this, MainActivity::class.java)

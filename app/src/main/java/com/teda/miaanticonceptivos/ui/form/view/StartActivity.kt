@@ -17,7 +17,8 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
         include.setOnClickListener {
-            startActivity(Intent(this, TermsActivity::class.java))
+            if (switch2.isChecked)
+                startActivity(Intent(this, PrioritiesActivity::class.java))
         }
         Utilities.getImage(Storage.imagesNames[0])?.let { imageBackground.setImageBitmap(it) }
         /* Glide.with(this)

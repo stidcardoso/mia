@@ -10,9 +10,11 @@ import android.view.ViewGroup
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.model.Prevention
 import com.teda.miaanticonceptivos.ui.MainCallback
+import com.teda.miaanticonceptivos.ui.home.DrawerHelper
 import com.teda.miaanticonceptivos.ui.home.presenter.PreventContract
 import com.teda.miaanticonceptivos.ui.home.presenter.PreventPresenter
 import com.teda.miaanticonceptivos.ui.home.view.adapter.PreventionAdapter
+import kotlinx.android.synthetic.main.component_side_bar.*
 import kotlinx.android.synthetic.main.fragment_prevent.*
 
 class PreventFragment : Fragment(), PreventContract.View {
@@ -34,9 +36,11 @@ class PreventFragment : Fragment(), PreventContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.getPrevents()
-        drawer.setOnClickListener {
-            mainCallback.openDrawer()
-        }
+        imageLight.visibility = View.GONE
+        DrawerHelper(sideBar, this)
+         drawer.setOnClickListener {
+             mainCallback.openDrawer()
+         }
     }
 
     override fun showPrevents(prevents: ArrayList<Prevention>) {

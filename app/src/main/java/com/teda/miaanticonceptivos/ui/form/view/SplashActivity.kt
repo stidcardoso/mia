@@ -11,8 +11,6 @@ import com.teda.miaanticonceptivos.ui.form.presenter.SplashPresenter
 import kotlinx.android.synthetic.main.activity_splash.*
 
 
-
-
 class SplashActivity : AppCompatActivity(), SplashContract.View {
 
     private val presenter = SplashPresenter(this)
@@ -21,7 +19,7 @@ class SplashActivity : AppCompatActivity(), SplashContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         presenter.getFirebaseData()
-        Glide.with(this).asGif().load(R.raw.loading).into(imageView)
+        Glide.with(this).asGif().load(R.raw.loading2).into(imageView)
     }
 
     override fun goToNextActivity() {

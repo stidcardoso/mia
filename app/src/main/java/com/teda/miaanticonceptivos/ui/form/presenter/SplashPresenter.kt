@@ -80,7 +80,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                     onEndService()
                 }
 
-        firebase.collection(FbConstants.PREVENTION)
+       /* firebase.collection(FbConstants.PREVENTION)
                 .get()
                 .addOnCompleteListener {
                     val preventions = ArrayList<Prevention>()
@@ -96,7 +96,7 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
                 .addOnFailureListener {
                     Log.d("FirebaseError", it.message)
                     onEndService()
-                }
+                }*/
 
         firebase.collection(FbConstants.IMAGE)
                 .get()

@@ -17,7 +17,7 @@ class TermsActivity : AppCompatActivity(), TermsContract.View {
         setContentView(R.layout.activity_terms)
         presenter.getTerms()
         imageView4.setOnClickListener {
-            startActivity(Intent(this, PrioritiesActivity::class.java))
+            startActivity(Intent(this, StartActivity::class.java))
         }
     }
 
