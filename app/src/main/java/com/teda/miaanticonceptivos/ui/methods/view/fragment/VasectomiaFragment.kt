@@ -67,9 +67,10 @@ class VasectomiaFragment : Fragment(), BaseMethodContract.View {
     }
 
     override fun showMethod(method: Method) {
+        textDesc.text = method.description
         recyclerAlarm.isNestedScrollingEnabled = false
         recyclerFeatures.isNestedScrollingEnabled = false
-        recyclerSideEffects .isNestedScrollingEnabled = false
+        recyclerSideEffects.isNestedScrollingEnabled = false
         val details = method.details
         val featuresAdapter = BasicAdapter(ArrayList(details?.features), false)
         recyclerFeatures.layoutManager = LinearLayoutManager(context)

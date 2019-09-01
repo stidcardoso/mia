@@ -62,6 +62,7 @@ class LigaduraFragment : Fragment(), BaseMethodContract.View {
     }
 
     override fun showMethod(method: Method) {
+        textDesc.text = method.description
         val details = method.details
         val featuresAdapter = BasicAdapter(ArrayList(details?.features), false)
         recyclerFeatures.layoutManager = LinearLayoutManager(context)

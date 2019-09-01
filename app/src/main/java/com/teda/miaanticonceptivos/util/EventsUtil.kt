@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.google.firebase.analytics.FirebaseAnalytics
 
 class EventsUtil(private var firebaseAnalytics: FirebaseAnalytics) {
-    
+
     fun endQuestions() {
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, END_QUESTIONS)

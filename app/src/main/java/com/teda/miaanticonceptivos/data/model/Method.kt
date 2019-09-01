@@ -7,6 +7,7 @@ open class Method() : RealmObject() {
     @PrimaryKey
     var id: Int? = null
     var name: String? = null
+    var description: String? = null
     var duration: Int? = null
     var discreet: Int? = null
     var icon: Int? = null
