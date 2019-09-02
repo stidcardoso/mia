@@ -20,6 +20,9 @@ class StartActivity : AppCompatActivity() {
             if (switch2.isChecked)
                 startActivity(Intent(this, PrioritiesActivity::class.java))
         }
+        textView11.setOnClickListener {
+            startActivity(Intent(this, TermsActivity::class.java))
+        }
         Utilities.getImage(Storage.imagesNames[0])?.let { imageBackground.setImageBitmap(it) }
         /* Glide.with(this)
                  .load(realmDao.getImage())

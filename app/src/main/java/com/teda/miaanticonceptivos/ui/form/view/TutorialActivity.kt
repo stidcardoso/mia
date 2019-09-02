@@ -12,7 +12,7 @@ class TutorialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guide)
         include.setOnClickListener{
-            startActivity(Intent(this, TermsActivity::class.java))
+            startActivity(Intent(this, StartActivity::class.java))
         }
     }
 }

@@ -61,19 +61,23 @@ class SplashPresenter(var v: SplashContract.View?) : SplashContract.Presenter {
         firebase.collection(FbConstants.METHOD)
                 .get()
                 .addOnCompleteListener { result ->
-                    val methods = ArrayList<Method>()
-                    for (qMethod in result.result?.documents ?: arrayListOf()) {
-                        val method = qMethod.toObject(Method::class.java)
-                        method?.details = gson.fromJson(method?.detailsJson, Method::class.java).details
-                        method?.details?.id = UUID.randomUUID().toString()
-                        val position = (method?.id ?: 1) - 1
-                        method?.icon = Storage.methods[position].icon
-                        method?.let { methods.add(it) }
+                    try {
+                        val methods = ArrayList<Method>()
+                        for (qMethod in result.result?.documents ?: arrayListOf()) {
+                            val method = qMethod.toObject(Method::class.java)
+                            method?.details = gson.fromJson(method?.detailsJson, Method::class.java).details
+                            method?.details?.id = UUID.randomUUID().toString()
+                            val position = (method?.id ?: 1) - 1
+                            method?.icon = Storage.methods[position].icon
+                            method?.let { methods.add(it) }
+                        }
+                        realmDao.insertMethods(methods)
+                        onEndService()
+                        val sync = Sync(Date())
+                        realmDao.insertSync(sync)
+                    } catch (e: Exception) {
+
                     }
-                    realmDao.insertMethods(methods)
-                    onEndService()
-                    val sync = Sync(Date())
-                    realmDao.insertSync(sync)
                 }
                 .addOnFailureListener {
                     Log.d("FirebaseError", it.message)

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
+import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.ui.KnowActivity
 import com.teda.miaanticonceptivos.util.Storage
@@ -24,8 +25,10 @@ class SelectTimeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_time)
         include.setOnClickListener {
-            if (selected)
+            if (selected) {
+                App.eventUtil.endQuestions()
                 startActivity(Intent(this, KnowActivity::class.java))
+            }
         }
 
         constraint1.setOnClickListener {
@@ -73,23 +76,23 @@ class SelectTimeActivity : AppCompatActivity() {
                         Storage.selectedTime = 0
                         selected(0, false)
                     }
-                    in (sp+1)..(sp*2) -> {
+                    in (sp + 1)..(sp * 2) -> {
                         Storage.selectedTime = 1
                         selected(1, false)
                     }
-                    in ((sp*2)+1)..(sp*3) -> {
+                    in ((sp * 2) + 1)..(sp * 3) -> {
                         Storage.selectedTime = 3
                         selected(2, false)
                     }
-                    in ((sp*3)+1)..(sp*4) -> {
+                    in ((sp * 3) + 1)..(sp * 4) -> {
                         Storage.selectedTime = 36
                         selected(3, false)
                     }
-                    in ((sp*4)+1)..(sp*5) -> {
+                    in ((sp * 4) + 1)..(sp * 5) -> {
                         Storage.selectedTime = 60
                         selected(4, false)
                     }
-                    in ((sp*5)+1)..(sp*6) -> {
+                    in ((sp * 5) + 1)..(sp * 6) -> {
                         Storage.selectedTime = 1000
                         selected(5, false)
                     }
@@ -107,7 +110,7 @@ class SelectTimeActivity : AppCompatActivity() {
     }
 
     private fun selected(position: Int, setProgress: Boolean = true) {
-        if(setProgress) {
+        if (setProgress) {
             val progress = ((1000.0 / 6) * (position + 1) - (1000.0 / 12))
             seekProgress.progress = progress.toInt()
         }

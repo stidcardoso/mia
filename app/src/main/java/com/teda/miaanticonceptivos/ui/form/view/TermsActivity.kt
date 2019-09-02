@@ -3,6 +3,7 @@ package com.teda.miaanticonceptivos.ui.form.view
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.ui.form.presenter.TermsContract
 import com.teda.miaanticonceptivos.ui.form.presenter.TermsPresenter
@@ -17,7 +18,8 @@ class TermsActivity : AppCompatActivity(), TermsContract.View {
         setContentView(R.layout.activity_terms)
         presenter.getTerms()
         imageView4.setOnClickListener {
-            startActivity(Intent(this, StartActivity::class.java))
+            App.eventUtil.newSession()
+            onBackPressed()
         }
     }
 
