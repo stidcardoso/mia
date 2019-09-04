@@ -21,6 +21,8 @@ class PreventFragment : Fragment(), PreventContract.View {
 
     lateinit var mainCallback: MainCallback
     private var presenter = PreventPresenter(this)
+    private var prevents = arrayListOf(Prevention("Doble protección; además de evitar embarazos no deseados,"),
+            Prevention("Es el único método para prevenir infecciones sexuales."))
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -35,12 +37,13 @@ class PreventFragment : Fragment(), PreventContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.getPrevents()
+//        presenter.getPrevents()
+        showPrevents(prevents)
         imageLight.visibility = View.GONE
         DrawerHelper(sideBar, this)
-         drawer.setOnClickListener {
-             mainCallback.openDrawer()
-         }
+        drawer.setOnClickListener {
+            mainCallback.openDrawer()
+        }
     }
 
     override fun showPrevents(prevents: ArrayList<Prevention>) {
