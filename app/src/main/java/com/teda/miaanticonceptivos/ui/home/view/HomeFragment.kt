@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.google.firebase.database.FirebaseDatabase
+import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.model.Method
 import com.teda.miaanticonceptivos.data.model.MethodResult
@@ -52,6 +53,7 @@ class HomeFragment : Fragment(), HomeContract.View {
             time.id = UUID.randomUUID().toString()
             val firebase = FirebaseDatabase.getInstance().getReference("time")
             firebase.child(time.id).setValue(time)
+            App.eventUtil.timeSession(time.duration ?: 0)
             val i = Intent(activity, TutorialActivity::class.java)
             startActivity(i)
             activity?.finishAffinity()
@@ -126,6 +128,7 @@ class HomeFragment : Fragment(), HomeContract.View {
             i += 1
             if (i > 3) break
             methodResults.add(MethodResult(method.id ?: 1, i))
+            App.eventUtil.method(method.name ?: "")
         }
         presenter.saveMethodResults(methodResults)
     }

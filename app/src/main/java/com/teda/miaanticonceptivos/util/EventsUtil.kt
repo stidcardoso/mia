@@ -19,6 +19,18 @@ class EventsUtil(private var firebaseAnalytics: FirebaseAnalytics) {
         firebaseAnalytics.logEvent(START_QUESTIONS, bundle)
     }
 
+    fun timeSession(seconds: Int) {
+        val bundle = Bundle()
+        bundle.putInt(TIME_AMOUNT, seconds)
+        firebaseAnalytics.logEvent(TIME, bundle)
+    }
+
+    fun method(method: String) {
+        val bundle = Bundle()
+        bundle.putString(METHOD, method)
+        firebaseAnalytics.logEvent(METHOD, bundle)
+    }
+
     fun setMethodResult() {
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, START_QUESTIONS)
@@ -34,5 +46,8 @@ class EventsUtil(private var firebaseAnalytics: FirebaseAnalytics) {
         const val END_QUESTIONS = "terminar_preguntas"
         const val START_QUESTIONS = "iniciar_preguntas"
         const val METHOD_RESULT = "resultado_metodos"
+        const val TIME = "tiempo_sesion"
+        const val TIME_AMOUNT = "tiempo_total_sesion"
+        const val METHOD = "metodo"
     }
 }
