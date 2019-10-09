@@ -6,6 +6,7 @@ import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.ui.form.presenter.TermsContract
 import com.teda.miaanticonceptivos.ui.form.presenter.TermsPresenter
+import com.teda.miaanticonceptivos.util.Storage
 import kotlinx.android.synthetic.main.activity_terms.*
 
 class TermsActivity : AppCompatActivity(), TermsContract.View {
@@ -17,7 +18,6 @@ class TermsActivity : AppCompatActivity(), TermsContract.View {
         setContentView(R.layout.activity_terms)
         presenter.getTerms()
         imageView4.setOnClickListener {
-            App.eventUtil.newSession()
             onBackPressed()
         }
     }

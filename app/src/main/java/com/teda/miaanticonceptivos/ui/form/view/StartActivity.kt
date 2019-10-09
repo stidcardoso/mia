@@ -3,6 +3,7 @@ package com.teda.miaanticonceptivos.ui.form.view
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.teda.miaanticonceptivos.App
 import com.teda.miaanticonceptivos.R
 import com.teda.miaanticonceptivos.data.local.RealmDao
 import com.teda.miaanticonceptivos.util.Storage
@@ -17,8 +18,11 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
         include.setOnClickListener {
-            if (switch2.isChecked)
+            if (switch2.isChecked) {
+                Storage.pendingEndQuestions = true
+                App.eventUtil.newSession()
                 startActivity(Intent(this, PrioritiesActivity::class.java))
+            }
         }
         textView11.setOnClickListener {
             startActivity(Intent(this, TermsActivity::class.java))

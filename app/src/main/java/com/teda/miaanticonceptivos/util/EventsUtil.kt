@@ -21,7 +21,7 @@ class EventsUtil(private var firebaseAnalytics: FirebaseAnalytics) {
 
     fun timeSession(seconds: Int) {
         val bundle = Bundle()
-        bundle.putInt(TIME_AMOUNT, seconds)
+        bundle.putInt(TIME, seconds)
         firebaseAnalytics.logEvent(TIME, bundle)
     }
 
